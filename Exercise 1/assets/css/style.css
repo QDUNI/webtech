@@ -1,133 +1,137 @@
 body {
+    padding: 0;
+    margin: 0;
+
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     overflow-x: hidden;
 }
 
-#main {
-    width: 100vw;
-    height: 30vh;
-    padding-left: 15vw;
-    padding-right: 15vw;
+h1 {
+    font-size: 8vh;
 }
 
-* {
+h2 {
+    font-size: 4vh;
+    color: #3d3d3d;
+}
+
+nav {
+    height: 100px;
+    border-bottom: 1px solid rgb(192, 192, 192);
+    padding: 20px;
     box-sizing: border-box;
-    padding: 0;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+}
+
+#nav_logo {
+    vertical-align: middle;
+    height: 60px;
+    line-height: 60px;
+    display: flex;
+    font-size: 1.1em;
+    color: black;
+}
+
+#nav_logo>* {
+    margin-right: 20px;
+}
+
+#logo {
+    height: 60px;
+}
+
+#nav_links>a {
+    margin-left: 40px;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+}
+
+#main {
     margin: 0;
 }
 
-.nav-wrapper {
-    padding-left: 5vw;
-    height: 60px;
-    width: 100%;
-    background-color: rgb(255, 255, 255);
-    display: flex;
-    z-index: 100;
-    position: relative;
-}
-
-.nav-logo {
-    height: 100%;
-    margin-left: 20px;
-}
-
-.logo {
-    height: 80%;
-    margin-top: 5px;
-}
-
-#title {
-    line-height: 60px;
+#header {
+    height: calc(100vh - 100px);
     vertical-align: middle;
-    font-size: 1.2em;
-    margin-left: 2vw;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-#background_video_container {
-    background: rgb(0, 0, 0);
-    max-height: 50vh;
-    height: 50vh;
-    width: 100vw;
-    z-index: -10;
-    position: relative;
-    overflow: hidden;
-}
-
-#info {
-    position: absolute;
-    top: 0px;
-    height: 100%;
     text-align: center;
-    color: white;
-    width: 100%;
-    z-index: 100;
-    font-size: 5vh;
+    font-size: 5em;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
 }
 
-#info>div {
-    margin-left: auto;
-    margin-right: auto;
-    width: 70vw;
+#learn {
+    text-align: center;
+    color: rgb(34, 34, 34);
+    margin-top: 10vh;
 }
 
-#info_header {
-    font-size: 3vh;
-    line-height: 3.2vh;
-    margin-top: 15vh;
+#code_anim {
+    margin-bottom: 8vh;
 }
 
-#background_video {
-    height: 100%;
-    width: 100%;
-    filter: brightness(1.2) contrast(1.2) blur(3px);
-    object-fit: cover;
-    object-position: top;
+#algo_vid {
+    height: 35vh;
+    margin-top: 10vh;
+    text-align: center;
 }
 
-#signup_container {
-    position: absolute;
-    top: 35vh;
-    right: 5vw;
-    color: black;
-    background-color: white;
-    width: 25vw;
-    height: 30vh;
-    border-radius: 5px;
+.Split {
+    display: flex;
+}
+
+.Split>div {
+    width: 50%;
+}
+
+#datatypes {
+    text-align: center;
+    height: 50vh;
+    filter: hue-rotate(175deg) brightness(2.2) saturate(0.7) contrast(1.2);
+}
+
+footer {
+    border-top: 1px solid rgb(192, 192, 192);
     padding: 20px;
+    padding-left: 10vw;
+    padding-right: 10vw;
+    display: flex;
+    justify-content: space-between;
+    background-color: white;
 }
 
-#signup_container>form {
-    height: 25vh;
+footer>div {
+    display: flex;
+    justify-content: space-around;
+    flex-direction: column;
+    min-width: 20vw;
+}
+
+footer>div>ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+#footer_logo {
     display: flex;
     flex-direction: column;
-    justify-content: space-around;
+    height: 100%;
 }
 
-#signup_container>form>* {}
-
-#signup_container>form>input {
-    width: 100%;
-    font-size: 1.2em;
-    padding: 0.3em;
-    border-radius: 5px;
-    outline: none;
-    border: 1px solid rgb(143, 143, 143);
+#footer_logo>img {
+    height: 50%;
+    margin-top: 10%;
 }
 
-#signup_container>form>button {
-    background-color: blue;
-    color: white;
-    padding: 0.8em;
-    border-radius: 5px;
-    outline: none;
-    border: none;
-    width: 100%;
-    height: 6vh;
-}
-
-#what_you_learn {
-    width: 100%;
-    background: red;
+#footer_logo>span {
+    text-align: center;
+    margin-top: 5%;
+    height: 50%;
+    line-height: 50%;
+    vertical-align: middle;
+    display: inline-block;
 }

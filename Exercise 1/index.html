@@ -1,55 +1,83 @@
-<!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
+    <title>UU - Imperative Programming</title>
     <link rel="stylesheet"
-          type="text/css"
           href="assets/css/style.css">
-
-    <title>Imperatief Programmeren</title>
-
 </head>
 
 <body>
-    <nav class="nav-wrapper">
-        <nav class="nav-logo">
-            <img class="logo"
-                 src="assets/img/logo/logo.svg"
-                 alt="logo">
-            <a href="index.html"></a>
-        </nav>
-        <span id="title">Imperatief Programmeren</span>
-        <nav class="nav-expand"></nav>
-        <nav class="nav-mobile"></nav>
+    <nav>
+        <div id="nav_logo">
+            <img id="logo"
+                 src="assets/img/logo/logo.svg">
+            <div>Universiteit Utrecht - Imperative Programming</div>
+        </div>
+        <div id="nav_links">
+            <a>Home</a>
+            <a>Colleges</a>
+            <a>Tests</a>
+            <a>Contacts</a>
+        </div>
     </nav>
 
-    <div id="background_video_container">
-        <video autoplay
-               muted
-               loop
-               id="background_video">
-            <source src="assets/videos/video4.mp4"
-                    type="video/mp4">
-        </video>
-        <div id="info">
-            <div>
-                <div id="info_header">
-                    <span style="font-size: 4vh;">Imperatief Programmeren
-                        <br><br></span><span style="opacity: 80%;">Een cursus
-                        voor
-                        de populairste programmeerparadigma.</span>
+    <div class="Main">
+        <div id="header">
+            <span>learn</span>
+            <div>the <span style="color: #efb501;">most widely</span> used</div>
+            <span>programming paradigm</span>
+        </div>
+
+
+
+        <div id="learn">
+            <h1 style="margin-bottom: 10vh; color: #efb501;">
+                What will you learn?
+            </h1>
+            <h2>
+                Iterating with loops
+            </h2>
+            <canvas id="code_anim"></canvas>
+            <div class="Split">
+                <div>
+                    <h2>Data types</h2>
+                    <img id="datatypes"
+                         src="assets/videos/data.gif">
+                </div>
+                <div>
+                    <h2>Complex Algorithms</h2>
+                    <video id="algo_vid"
+                           autoplay
+                           loop>
+                        <source src="assets/videos/algo.mp4"
+                                type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
             </div>
+            <div style="height: 20vh;"></div>
         </div>
     </div>
-    <div id="main">
-        <div id="what_you_learn">
 
+    <footer>
+        <div>
+            Heeft u vragen over de cursus? Stuur ons dan een email.
+            <ul>
+                <li>Domplein 29</li>
+                <li>3512 JE Utrecht</li>
+                <li>Tel: 0623257696</li>
+                <li>Email: imperatiefprogrammeren@uu.nl</li>
+            </ul>
         </div>
-    </div>
+        <div>
+            <div id="footer_logo">
+                <img src="assets/img/logo/logo.svg">
+                <span>Universiteit Utrecht</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/code_anim.js"></script>
 </body>
 
 </html>
