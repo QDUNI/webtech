@@ -1,4 +1,6 @@
 {
+    const header_content = document.getElementById("header_content");
+
     const canvas = document.getElementById("code_anim");
     let ctx = canvas.getContext("2d");
     let width = 0;
@@ -25,6 +27,8 @@
     function onScroll() {
         const position = document.body.scrollTop;
 
+        header_content.setAttribute("style", "opacity: " + (100 - position * 0.4) + "%");
+
         anim_code(position);
     }
 
@@ -47,11 +51,11 @@
         ctx.fillText("1. int step = " + (i - 1) + ";", 120, 150);
         ctx.fillText("2. int rotation = " + Math.ceil(270 * rot) + ";", 120, 200);
 
-        ctx.fillText("3. ", 120, 250);
-        if (rot <= 0.5 && rot >= 0)
-        {
-            ctx.fillText("   step++;", 120, 250);
-        }
+        // ctx.fillText("3. ", 120, 250);
+        // if (rot <= 0.5 && rot >= 0)
+        // {
+        //     ctx.fillText("   step++;", 120, 250);
+        // }
 
         // Render stairs
         ctx.strokeStyle = "#3d3d3d";

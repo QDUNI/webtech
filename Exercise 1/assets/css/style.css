@@ -70,22 +70,72 @@ nav {
     margin-top: 10vh;
 }
 
+#learn p {
+    position: relative;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 2.5vh;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
 #code_anim {
     margin-bottom: 8vh;
 }
 
 #algo_vid {
-    height: 35vh;
-    margin-top: 10vh;
+    height: 38vh;
+    margin-top: 7vh;
     text-align: center;
 }
 
 .Split {
     display: flex;
+    text-align: center;
 }
 
 .Split>div {
     width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media (orientation: portrait) {
+    .Split {
+        flex-direction: column;
+    }
+
+    .split img {
+        width: 100% !important;
+        height: fit-content !important;
+        margin-top: auto;
+        margin-right: auto;
+    }
+
+    #algo_vid {
+        width: 50% !important;
+        height: auto !important;
+        margin-right: 3%;
+    }
+
+    .split>div {
+        display: flex;
+        flex-direction: row;
+        width: 100%;
+        text-align: left;
+    }
+
+    .split>div>* {
+        max-width: 50%;
+    }
+
+    #learn h2 {
+        margin-left: 10%;
+    }
+
+    #learn p {
+        width: 80%;
+    }
 }
 
 #datatypes {
