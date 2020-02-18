@@ -40,7 +40,6 @@ function onScroll() {
     {
         position = document.body.scrollTop;
     }
-    console.log(position);
 
     header_content.setAttribute("style", "opacity: " + (100 - position * 0.4) + "%");
 
