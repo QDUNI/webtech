@@ -1,14 +1,22 @@
 {
-    const header_content = document.getElementById("header_content");
+    var header_content;
+    var canvas;
+    var ctx;
+    var width;
+    var height;
 
-    const canvas = document.getElementById("code_anim");
-    let ctx = canvas.getContext("2d");
-    let width = 0;
-    let height = 0;
+    document.addEventListener("DOMContentLoaded", () => {
+        header_content = document.getElementById("header_content");
 
-    resize();
+        canvas = document.getElementById("code_anim");
+        ctx = canvas.getContext("2d");
+        width = 0;
+        height = 0;
 
-    window.addEventListener("resize", onResize);
+        resize();
+
+        window.addEventListener("resize", onResize);
+    });
 
     function onResize() {
         resize();
@@ -47,15 +55,9 @@
 
         // Render code
         ctx.fillStyle = "#3d3d3d";
-        ctx.font = '32px monospace';
-        ctx.fillText("1. int step = " + (i - 1) + ";", 120, 150);
-        ctx.fillText("2. int rotation = " + Math.ceil(270 * rot) + ";", 120, 200);
-
-        // ctx.fillText("3. ", 120, 250);
-        // if (rot <= 0.5 && rot >= 0)
-        // {
-        //     ctx.fillText("   step++;", 120, 250);
-        // }
+        ctx.font = Math.ceil(height * 0.1) + 'px monospace';
+        ctx.fillText("1. int step = " + (i - 1) + ";", width * 0.1, height * 0.5);
+        ctx.fillText("2. int rotation = " + Math.ceil(270 * rot) + ";", width * 0.1, height * 0.6);
 
         // Render stairs
         ctx.strokeStyle = "#3d3d3d";
