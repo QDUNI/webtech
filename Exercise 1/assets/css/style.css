@@ -535,3 +535,34 @@ footer a:hover {
     background-color: black;
     color: white;
 }
+
+.test-header{
+    margin-top: 70px;
+    text-align: center;
+}
+
+.tests-paragraph{
+    font-size: 10px;
+    margin: 20px;
+    text-align: left;
+}
+
+.Tests-Headers{
+    text-align: center;
+    margin: 10px;
+}
+
+@media only screen and (min-width: 768px){
+    .tests-paragraph{
+        font-size: medium;
+        margin: 100px;
+    }
+}
+
+@media only screen and (min-width: 1400px){
+    .tests-paragraph{
+        font-size: 16px;
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+}
