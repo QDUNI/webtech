@@ -97,7 +97,7 @@ function anim_code(pos) {
 
     ctx.lineWidth = 5;
     ctx.strokeStyle = "#efb501";
-    ctx.stroke();
+    //ctx.stroke();
     //ctx.fillStyle = "#efb501";
     ctx.fillStyle = "white";
     ctx.fill();
