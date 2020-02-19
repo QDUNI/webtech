@@ -242,6 +242,16 @@ a:hover {
     overflow: hidden;
 }
 
+#header_content {
+    font-size: 8vh;
+}
+
+@media(orientation: portrait) {
+    #header_content {
+        font-size: 16vw;
+    }
+}
+
 #headerkey {
     color: white;
 }
