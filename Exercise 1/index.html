@@ -1,44 +1,106 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="assets/css/style.css">
-
-    <title>Imperatief Programmeren</title>
-
+    <title>UU - Imperative Programming</title>
+    <link rel="stylesheet"
+          href="assets/css/style.css">
 </head>
 
 <body>
-    <nav class="nav-wrapper">
-        <nav class="nav-logo">
-            <img class="logo" src="assets/img/logo/logo.svg" alt="logo">
-            <a href="index.html"></a>
-        </nav>
-        <span id="title">Imperatief Programmeren</span>
-        <nav class="nav-expand"></nav>
-        <nav class="nav-mobile"></nav>
+    <nav>
+        <div id="nav_logo">
+            <img id="logo"
+                 src="assets/img/logo/logo.svg">
+            <div>Universiteit Utrecht - Imperative Programming</div>
+        </div>
+        <div id="nav_links">
+            <a href="./index.html">Home</a>
+            <a>Colleges</a>
+            <a>Tests</a>
+            <a href="./FAQ.html">FAQ</a>
+            <a href="./Contact.html">Contact</a>
+        </div>
     </nav>
 
-    <div id="background_video_container">
-        <video autoplay muted loop id="background_video">
-            <source src="assets/videos/video1.mov"
-                    type="video/mp4">
-        </video>
+    <div class="Main">
+        <div id="header">
+            <div id="header_content">
+                <span>learn</span>
+                <div>the <span style="color: #efb501;">most widely</span> used
+                </div>
+                <span>programming paradigm</span>
+            </div>
+        </div>
 
 
 
-        <!-- <div id="signup_container">
-            Schrijf je nu in!
-            <form>
-                <input placeholder="Naam">
-                <input placeholder="Email">
-                <input placeholder="Wachtwoord">
-                <button>AANMELDEN</button> 
-            </form>
-        </div> !-->
+        <div id="learn">
+            <h1 style="margin-bottom: 10vh; color: #efb501;">
+                What will you learn?
+            </h1>
+            <h2>
+                Iterating with loops
+            </h2>
+            <p>An essential part of programming are loops. With loops you can
+                iterate through a list or a sequence. You learn what type of
+                loops exist and how to use them.</p>
+            <canvas id="code_anim"></canvas>
+            <div class="Split">
+                <div>
+                    <div>
+                        <h2>Data types</h2>
+                        <p>Programming always involves data. The kind of data
+                            you
+                            use is specific to the application of your program.
+                            You
+                            learn what type of data exist and when to use them.
+                        </p>
+                    </div>
+                    <img id="datatypes"
+                         src="assets/videos/data.gif">
+                </div>
+                <div>
+                    <div>
+                        <h2>Complex Algorithms</h2>
+                        <p>To solve a problem or to perform a calculation, you
+                            use
+                            algorithms. In this course you learn to analyse and
+                            make
+                            complex algorithms. </p>
+                    </div>
+                    <video id="algo_vid"
+                           autoplay
+                           loop>
+                        <source src="assets/videos/algo.mp4"
+                                type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+            </div>
+            <div style="height: 20vh;"></div>
+        </div>
     </div>
+
+    <footer class="Split">
+        <div>
+            Do you have questions about the course? Send us an email. <br><br>
+            <ul>
+                <li>Domplein 29</li>
+                <li>3512 JE Utrecht</li>
+                <li>Tel: 0623257696</li>
+                <li>Email: imperatiefprogrammeren@uu.nl</li>
+            </ul>
+        </div>
+        <div>
+            <div id="footer_logo">
+                <img src="assets/img/logo/logo.svg">
+                <span>Universiteit Utrecht</span>
+            </div>
+        </div>
+    </footer>
+
+    <script src="assets/js/code_anim.js"></script>
 </body>
 
 </html>
