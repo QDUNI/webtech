@@ -54,10 +54,10 @@ function anim_code(pos) {
     const stair_height = height / 8;
 
     const step = height / 8;
-    const offset = height / 0.8;
-    const i = pos < offset ? 1 : Math.ceil((pos - offset) / step);
+    const offset = window.innerHeight;
+    const i = pos < offset ? 0 : Math.ceil((pos - offset) / step);
     const pivot = { x: 0.5 + stair_height * i + width * 0.7, y: height - 0.5 - stair_height * i };
-    const rot = ((pos - offset) / step) - Math.floor((pos - offset) / step);
+    const rot = i == 0 ? 0 : ((pos - offset) / step) - Math.floor((pos - offset) / step);
 
     // Render code
     ctx.fillStyle = "#3d3d3d";
