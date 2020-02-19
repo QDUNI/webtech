@@ -113,7 +113,7 @@ h2 {
 
 .Nav_mob_links.responsive {
     display: inline-block;
-    padding-top: 0px;
+    padding-top: 70px;
     margin-bottom: -70px;
 }
 
@@ -522,6 +522,13 @@ footer a {
     line-height: 40px;
     border-radius: 20px;
     margin-top: 20px;
+}
+
+@media(orientation: portrait) {
+    footer a {
+        margin-left: auto;
+        margin-right: auto;
+    }
 }
 
 footer a:hover {
