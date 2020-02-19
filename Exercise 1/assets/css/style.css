@@ -308,7 +308,7 @@ a:hover {
     margin-bottom: 8vh;
 }
 
-#video__algorithm {
+#img__algorithm {
     height: 38vh;
     margin-top: 7vh;
     text-align: center;
@@ -344,7 +344,7 @@ a:hover {
         margin-top: auto;
         margin-right: auto;
     }
-    #video__algorithm {
+    #img__algorithm {
         width: 70% !important;
         height: auto !important;
     }
