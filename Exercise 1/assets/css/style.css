@@ -124,6 +124,15 @@ h2 {
     display: none;
 }
 
+@media only screen and (min-width: 1024px) {
+    .navmob {
+        display: none;
+    }
+    .nav__expand {
+        display: inline-block;
+    }
+}
+
 .Center {
     text-align: center;
 }
@@ -175,7 +184,6 @@ h2 {
         margin-left: 5%;
         font-size: 2vw;
     }
-
     .CardSpan {
         font-size: 1em;
     }
@@ -318,46 +326,47 @@ a:hover {
     align-self: start;
 }
 
+#Split__Contact {
+    height: 50vh;
+}
+
+.Split p {
+    padding-bottom: 15px;
+}
+
 @media (orientation: portrait) {
     .Split {
         flex-direction: column;
     }
-
     .split img {
         width: 100% !important;
         height: fit-content !important;
         margin-top: auto;
         margin-right: auto;
     }
-
     #video__algorithm {
         width: 70% !important;
         height: auto !important;
     }
-
     .split>div {
         display: flex;
         flex-direction: column;
         width: 100%;
         text-align: center;
     }
-
     .split>div>* {
         max-width: 80%;
         margin-left: auto;
         margin-right: auto;
     }
-
     #learn p {
         width: 80%;
     }
-
     #footer__logo {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
     }
-
     footer>div {
         text-align: center;
     }
@@ -377,6 +386,7 @@ a:hover {
 .text__planning {
     text-align: center;
     margin: 50px;
+    margin-top: 120px;
 }
 
 .boxes {
@@ -411,22 +421,18 @@ th {
 }
 
 @media only screen and (max-width: 700px) {
-
     table,
     td,
     th {
         font-size: 8px;
     }
-
     td,
     th {
         padding: 4px
     }
-
     .boxes {
         margin: 10px;
     }
-
     .text__planning {
         font-size: small;
     }
@@ -446,9 +452,8 @@ th {
     }
 }
 
-.background {
+#College__body {
     background-color: #efb501;
-    padding-top: 70px;
 }
 
 footer {
@@ -477,6 +482,11 @@ footer>div>ul {
     margin: 0;
 }
 
+footer>div>ul>li>a {
+    text-decoration: none;
+    color: aqua;
+}
+
 #footer__logo {
     display: flex;
     flex-direction: column;
@@ -500,17 +510,7 @@ footer>div>ul {
     display: inline-block;
 }
 
-@media only screen and (min-width: 1024px) {
-    .navmob {
-        display: none;
-    }
-
-    .nav__expand {
-        display: inline-block;
-    }
-}
-
-footer a {
+#Contact__btn {
     background-color: #efb501;
     width: 200px;
     text-align: center;
@@ -525,13 +525,13 @@ footer a {
 }
 
 @media(orientation: portrait) {
-    footer a {
+    #Contact__btn {
         margin-left: auto;
         margin-right: auto;
     }
 }
 
-footer a:hover {
+#Contact__btn:hover {
     background-color: black;
     color: white;
 }
