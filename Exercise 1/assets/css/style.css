@@ -34,6 +34,7 @@ h2 {
     position: fixed;
     border-bottom: 2px solid goldenrod;
     z-index: 100;
+    top: 0;
 }
 
 .nav-logo {
@@ -355,6 +356,88 @@ a:hover {
     max-height: 50vh;
     filter: hue-rotate(175deg) brightness(2.2) saturate(0.7) contrast(1.2);
     max-width: 80vw;
+}
+
+.month {
+    text-align: center;
+}
+
+.planning-text {
+    text-align: center;
+    margin: 50px;
+}
+
+.boxes {
+    margin: 50px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+table,
+td,
+th {
+    table-layout: fixed;
+    text-align: center;
+    vertical-align: top;
+    border-collapse: collapse;
+    padding: 10px;
+    align-self: center;
+    width: 100%;
+    font-size: small;
+}
+
+.corner-left {
+    border-bottom-left-radius: 25px;
+}
+
+.corner-right {
+    border-bottom-right-radius: 25px;
+}
+
+.dark {
+    background-color: lightgray;
+}
+
+@media only screen and (max-width: 700px) {
+
+    table,
+    td,
+    th {
+        font-size: 8px;
+    }
+
+    td,
+    th {
+        padding: 4px
+    }
+
+    .boxes {
+        margin: 10px;
+    }
+
+    .planning-text {
+        font-size: small;
+    }
+
+}
+
+@media only screen and (min-width: 1000px) {
+    .boxes {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .boxes {
+        margin-left: 400px;
+        margin-right: 400px;
+    }
+}
+
+.background {
+    background-color: #efb501;
+    padding-top: 70px;
 }
 
 footer {
