@@ -112,7 +112,7 @@ h2 {
 
 .Nav_mob_links.responsive {
     display: inline-block;
-    padding-top: 70px;
+    padding-top: 0px;
     margin-bottom: -70px;
 }
 
