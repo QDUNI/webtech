@@ -430,7 +430,6 @@ th {
     .text__planning {
         font-size: small;
     }
-
 }
 
 @media only screen and (min-width: 1000px) {
@@ -545,7 +544,14 @@ footer a:hover {
 .tests__paragraph {
     font-size: 10px;
     margin: 20px;
+    margin-top: 0px;
     text-align: left;
+}
+
+.test-header__banner {
+    width: 100vw;
+    height: auto;
+    margin-bottom: 50px;
 }
 
 .tests__Headers {
@@ -557,7 +563,12 @@ footer a:hover {
     .tests__paragraph {
         font-size: medium;
         margin: 100px;
+        margin-top: 50px;
     }
+}
+
+.tests-paragraph p {
+    text-align: center;
 }
 
 @media only screen and (min-width: 1400px) {
