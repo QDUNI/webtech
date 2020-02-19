@@ -25,6 +25,88 @@ h2 {
     margin-right: 20vw;
 }
 
+.FullPage {
+    padding: 5vh;
+}
+
+.FlexRow {
+    display: flex;
+    width: 100%;
+}
+
+.Line {
+    background-color: black;
+    height: 1px;
+}
+
+.Card {
+    background-color: white;
+    width: 50vw;
+    height: 35vh;
+    margin-left: 25vw;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.253);
+}
+
+@media (orientation: portrait) {
+    .Card {
+        width: 90%;
+        margin-left: 5%;
+        font-size: 2em;
+    }
+
+    .CardSpan {
+        font-size: 1em;
+    }
+}
+
+.CardContent {
+    width: 60%;
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #efb501;
+    color: rgb(61, 61, 61);
+    padding-top: 5%;
+}
+
+.CardContent>h3 {
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    margin: 0%;
+    font-size: 2em;
+}
+
+.CardContent>span {
+    color: rgb(85, 85, 85);
+}
+
+.CardContent>hr {
+    border-top: 1px solid rgb(107, 107, 107);
+    border-bottom: none;
+    margin-bottom: 5%;
+}
+
+.CardImage {
+    width: 40%;
+    height: 100%;
+    background-color: rgb(61, 61, 61);
+    overflow: hidden;
+    display: grid;
+}
+
+.CardImagePortrait {
+    width: 70%;
+    border-radius: 100%;
+    text-align: center;
+    margin-left: 15%;
+    margin-top: auto;
+    margin-bottom: auto;
+    box-sizing: border-box;
+    border: 2px solid rgb(223, 223, 223);
+}
+
 nav {
     height: 100px;
     border-bottom: 1px solid rgb(192, 192, 192);
@@ -158,11 +240,21 @@ nav {
     #learn p {
         width: 80%;
     }
+
+    #footer_logo {
+        text-align: center;
+        margin-left: auto;
+        margin-right: auto;
+    }
+
+    footer>div {
+        text-align: center;
+    }
 }
 
 #datatypes {
     text-align: center;
-    height: 50vh;
+    max-height: 50vh;
     filter: hue-rotate(175deg) brightness(2.2) saturate(0.7) contrast(1.2);
 }
 
