@@ -548,6 +548,10 @@ footer a:hover {
     text-align: left;
 }
 
+.tests__paragraph p {
+    text-align: center;
+}
+
 .test-header__banner {
     width: 100vw;
     height: auto;
