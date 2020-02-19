@@ -41,7 +41,7 @@ function onScroll() {
         position = document.body.scrollTop;
     }
 
-    header_content.setAttribute("style", "opacity: " + (100 - position * 0.4) + "%");
+    //header_content.setAttribute("style", "opacity: " + (100 - position * 0.4) + "%");
 
     anim_code(position);
 }
@@ -49,6 +49,10 @@ function onScroll() {
 function anim_code(pos) {
     ctx.resetTransform();
     ctx.clearRect(0, 0, width, height);
+    ctx.beginPath();
+    ctx.rect(-0.5, -0.5, canvas.width + 1, canvas.height + 1);
+    ctx.fillStyle = "#efb501";
+    ctx.fill();
 
     // Calculate pivot and rotation
     const stair_height = height / 8;
@@ -76,7 +80,11 @@ function anim_code(pos) {
         ctx.lineTo(stair_height * (i + 1) + width * 0.7 + 0.5, height - 0.5 - (stair_height * i));
         ctx.lineTo(stair_height * (i + 1) + width * 0.7 + 0.5, height - 0.5 - (stair_height * (i + 1)));
     }
-    ctx.stroke();
+
+    ctx.lineTo(canvas.width + 0.5, canvas.height + 0.5);
+    ctx.lineTo(-0.5, height + 0.5);
+    ctx.fillStyle = "white";
+    ctx.fill();
 
     // Render square
     ctx.beginPath();
@@ -90,7 +98,8 @@ function anim_code(pos) {
     ctx.lineWidth = 5;
     ctx.strokeStyle = "#efb501";
     ctx.stroke();
-    ctx.fillStyle = "#efb501";
+    //ctx.fillStyle = "#efb501";
+    ctx.fillStyle = "white";
     ctx.fill();
 
 

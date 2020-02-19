@@ -8,11 +8,20 @@ body {
 
 h1 {
     font-size: 8vh;
+    background-color: #efb501;
+    color: white;
+    margin: 0;
+    margin-bottom: 2vh;
+}
+
+.PrimaryColor {
+    background-color: #efb501;
 }
 
 h2 {
     font-size: 4vh;
     color: #3d3d3d;
+    margin: 0;
 }
 
 .Center {
@@ -69,6 +78,16 @@ h2 {
     background-color: #efb501;
     color: rgb(61, 61, 61);
     padding-top: 5%;
+}
+
+.CardContent a {
+    text-decoration: none;
+    color: rgb(63, 63, 63);
+    font-weight: 800;
+}
+
+a:hover {
+    cursor: pointer;
 }
 
 .CardContent>h3 {
@@ -158,6 +177,7 @@ nav {
     flex-direction: column;
     justify-content: center;
     font-family: Arial, Helvetica, sans-serif;
+    background-color: #efb501;
 }
 
 #background_video {
@@ -174,16 +194,16 @@ nav {
 #learn {
     text-align: center;
     color: rgb(34, 34, 34);
-    margin-top: 10vh;
 }
 
 #learn p {
     position: relative;
     width: 50%;
-    margin-left: auto;
-    margin-right: auto;
     font-size: 2.5vh;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    margin: 0;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 #code_anim {
