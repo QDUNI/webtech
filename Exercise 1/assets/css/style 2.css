@@ -25,7 +25,7 @@ nav {
     font-size: 1.1em;
 }
 
-#nav_logo {
+#nav__logo {
     vertical-align: middle;
     height: 60px;
     line-height: 60px;
@@ -34,7 +34,7 @@ nav {
     color: black;
 }
 
-#nav_logo>* {
+#nav__logo>* {
     margin-right: 20px;
 }
 
@@ -42,7 +42,7 @@ nav {
     height: 60px;
 }
 
-#nav_links>a {
+#nav__links>a {
     margin-left: 40px;
     height: 60px;
     line-height: 60px;
@@ -79,11 +79,11 @@ nav {
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
-#code_anim {
+#animation__code {
     margin-bottom: 8vh;
 }
 
-#algo_vid {
+#video__algorithm {
     height: 38vh;
     margin-top: 7vh;
     text-align: center;
@@ -112,7 +112,7 @@ nav {
         margin-right: auto;
     }
 
-    #algo_vid {
+    #video__algorithm {
         width: 70% !important;
         height: auto !important;
     }
@@ -163,18 +163,18 @@ footer>div>ul {
     padding: 0;
 }
 
-#footer_logo {
+#footer__logo {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-#footer_logo>img {
+#footer__logo>img {
     height: 50%;
     margin-top: 10%;
 }
 
-#footer_logo>span {
+#footer__logo>span {
     text-align: center;
     margin-top: 5%;
     height: 50%;

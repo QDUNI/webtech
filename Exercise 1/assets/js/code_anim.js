@@ -1,13 +1,13 @@
-var header_content;
+var header__content;
 var canvas;
 var ctx;
 var width;
 var height;
 
 document.addEventListener("DOMContentLoaded", () => {
-    header_content = document.getElementById("header_content");
+    header__content = document.getElementById("header__content");
 
-    canvas = document.getElementById("code_anim");
+    canvas = document.getElementById("animation__code");
     ctx = canvas.getContext("2d");
     width = 0;
     height = 0;
@@ -41,7 +41,7 @@ function onScroll() {
         position = document.body.scrollTop;
     }
 
-    //header_content.setAttribute("style", "opacity: " + (100 - position * 0.4) + "%");
+    //header__content.setAttribute("style", "opacity: " + (100 - position * 0.4) + "%");
 
     anim_code(position);
 }
