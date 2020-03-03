@@ -20,7 +20,7 @@
     navLinks.setAttribute("class", "nav__links");
     const listItems = [["index.html", "Home"],
     ["Colleges.html", "Collegs"],
-    ["Tests.html", "Tests"],
+    ["Test.html", "Tests"],
     ["FAQ.html", "FAQ"],
     ["Info.html", "Info"],
     ["Contact.html", "Contact"]];
