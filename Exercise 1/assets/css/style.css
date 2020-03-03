@@ -4,6 +4,201 @@ body {
     overflow-x: hidden;
 }
 
+h1 {
+    font-size: 8vh;
+}
+
+.background {
+    background-color: #FFCB01;
+}
+
+.month {
+    text-align: center;
+}
+
+table,
+td,
+th {
+    table-layout: fixed;
+    text-align: center;
+    vertical-align: top;
+    border-collapse: collapse;
+    padding: 10px;
+    align-self: center;
+    width: 100%;
+    font-size: small;
+}
+
+.corner-left {
+    border-bottom-left-radius: 25px;
+}
+
+.corner-right {
+    border-bottom-right-radius: 25px;
+}
+
+.dark {
+    background-color: lightgray;
+}
+
+.nav-wrapper {
+    height: 60px;
+    width: 100%;
+    background-color: rgb(255, 255, 255);
+    display: box;
+    position: static;
+    display: block;
+}
+
+.planning-text {
+    text-align: center;
+    margin: 50px;
+}
+
+.boxes {
+    margin: 50px;
+    background-color: white;
+    border-radius: 25px;
+}
+
+h2 {
+    font-size: 4vh;
+    color: #3d3d3d;
+}
+
+.Center {
+    text-align: center;
+}
+
+.Page {
+    margin: 10vh;
+    margin-left: 20vw;
+    margin-right: 20vw;
+}
+
+.FullPage {
+    padding: 5vh;
+}
+
+.FlexRow {
+    display: flex;
+    width: 100%;
+}
+
+.Line {
+    background-color: black;
+    height: 1px;
+}
+
+.Card {
+    background-color: white;
+    width: 50vw;
+    height: 35vh;
+    margin-left: 25vw;
+    overflow: hidden;
+    display: flex;
+    box-shadow: 0px 1px 10px 2px rgba(0, 0, 0, 0.253);
+}
+
+@media (orientation: portrait) {
+    .Card {
+        width: 90%;
+        margin-left: 5%;
+        font-size: 2em;
+    }
+
+    .CardSpan {
+        font-size: 1em;
+    }
+}
+
+.CardContent {
+    width: 60%;
+    height: 100%;
+    padding-left: 5%;
+    padding-right: 5%;
+    background-color: #efb501;
+    color: rgb(61, 61, 61);
+    padding-top: 5%;
+}
+
+.CardContent>h3 {
+    font-weight: 200;
+    letter-spacing: 0.1em;
+    margin: 0%;
+    font-size: 2em;
+}
+
+.CardContent>span {
+    color: rgb(85, 85, 85);
+}
+
+.CardContent>hr {
+    border-top: 1px solid rgb(107, 107, 107);
+    border-bottom: none;
+    margin-bottom: 5%;
+}
+
+.CardImage {
+    width: 40%;
+    height: 100%;
+    background-color: rgb(61, 61, 61);
+    overflow: hidden;
+    display: grid;
+}
+
+.CardImagePortrait {
+    width: 70%;
+    border-radius: 100%;
+    text-align: center;
+    margin-left: 15%;
+    margin-top: auto;
+    margin-bottom: auto;
+    box-sizing: border-box;
+    border: 2px solid rgb(223, 223, 223);
+}
+
+nav {
+    height: 100px;
+    border-bottom: 1px solid rgb(192, 192, 192);
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    justify-content: space-between;
+    font-size: 1.1em;
+    background-color: white;
+}
+
+#nav_logo {
+    vertical-align: middle;
+    height: 60px;
+    line-height: 60px;
+    display: flex;
+    font-size: 1.1em;
+    color: black;
+}
+
+#nav_logo>* {
+    margin-right: 20px;
+}
+
+#logo {
+    height: 60px;
+}
+
+#nav_links>a {
+    margin-left: 40px;
+    height: 60px;
+    line-height: 60px;
+    vertical-align: middle;
+    text-decoration: none;
+    color: unset;
+}
+
+#main {
+    background-color: white;
+}
+
 * {
     box-sizing: border-box;
     padding: 0;
@@ -71,6 +266,26 @@ h2 {
     color: #4d4d4d;
 }
 
+#learn p {
+    width: 80%;
+}
+
+#footer_logo {
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+footer>div {
+    text-align: center;
+}
+
+#datatypes {
+    text-align: center;
+    max-height: 50vh;
+    filter: hue-rotate(175deg) brightness(2.2) saturate(0.7) contrast(1.2);
+}
+
 #title {
     line-height: 70px;
     vertical-align: middle;
@@ -94,7 +309,80 @@ h2 {
     height: 100%;
 }
 
-.navmob a.icon {
+footer>div {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    min-width: 20vw;
+    text-align: left;
+    margin-bottom: 20px;
+}
+
+footer>div>ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+@media only screen and (max-width: 700px) {
+
+    table,
+    td,
+    th {
+        font-size: 8px;
+    }
+
+    td,
+    th {
+        padding: 4px
+    }
+
+    .boxes {
+        margin: 10px;
+    }
+
+    .planning-text {
+        font-size: small;
+    }
+}
+
+@media only screen and (min-width: 1000px) {
+    .boxes {
+        margin-left: 200px;
+        margin-right: 200px;
+    }
+}
+
+@media only screen and (min-width: 1400px) {
+    .boxes {
+        margin-left: 400px;
+        margin-right: 400px;
+    }
+}
+
+#footer_logo {
+    display: flex;
+    flex-direction: column;
+    align-content: flex-end;
+    text-align: right;
+    margin-left: auto;
+    width: 50%;
+}
+
+#footer_logo>img {
+    height: 100px;
+    margin-bottom: 20px;
+}
+
+#footer_logo>span {
+    text-align: center;
+    margin-bottom: 0%;
+    line-height: 100%;
+    vertical-align: bottom;
+    display: inline-block;
+}
+
+.nav-mobile a.icon {
     top: 0;
     width: 50px;
     height: 44px;
@@ -128,6 +416,7 @@ h2 {
     .navmob {
         display: none;
     }
+
     .nav__expand {
         display: inline-block;
     }
@@ -184,6 +473,7 @@ h2 {
         margin-left: 5%;
         font-size: 2vw;
     }
+
     .CardSpan {
         font-size: 1em;
     }
@@ -338,35 +628,42 @@ a:hover {
     .Split {
         flex-direction: column;
     }
+
     .split img {
         width: 100% !important;
         height: fit-content !important;
         margin-top: auto;
         margin-right: auto;
     }
+
     #img__algorithm {
         width: 70% !important;
         height: auto !important;
     }
+
     .split>div {
         display: flex;
         flex-direction: column;
         width: 100%;
         text-align: center;
     }
+
     .split>div>* {
         max-width: 80%;
         margin-left: auto;
         margin-right: auto;
     }
+
     #learn p {
         width: 80%;
     }
+
     #footer__logo {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
     }
+
     footer>div {
         text-align: center;
     }
@@ -421,18 +718,22 @@ th {
 }
 
 @media only screen and (max-width: 700px) {
+
     table,
     td,
     th {
         font-size: 8px;
     }
+
     td,
     th {
         padding: 4px
     }
+
     .boxes {
         margin: 10px;
     }
+
     .text__planning {
         font-size: small;
     }
