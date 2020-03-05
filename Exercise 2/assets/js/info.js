@@ -8,8 +8,12 @@ class Course {
     renderDOM() {
         const courseElement = document.createElement("article");
         courseElement.setAttribute("id", "course__article");
-        const titleElement = document.createElement("h1");
+        const titleElement = document.createElement("div");
+        titleElement.setAttribute("id", "info__header");
         titleElement.appendChild(document.createTextNode(this.title));
+        const departmentElement = document.createElement("div");
+        departmentElement.appendChild(document.createTextNode(this.department));
+        titleElement.appendChild(departmentElement);
         courseElement.appendChild(titleElement);
 
         const infoEntriesWrapper = document.createElement("div");
