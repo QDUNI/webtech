@@ -41,8 +41,6 @@ function onScroll() {
         position = document.body.scrollTop;
     }
 
-    //header__content.setAttribute("style", "opacity: " + (100 - position * 0.4) + "%");
-
     anim_code(position);
 }
 
@@ -51,7 +49,7 @@ function anim_code(pos) {
     ctx.clearRect(0, 0, width, height);
     ctx.beginPath();
     ctx.rect(-0.5, -0.5, canvas.width + 1, canvas.height + 1);
-    ctx.fillStyle = "#efb501";
+    ctx.fillStyle = "rgb(255,255,255,0)";
     ctx.fill();
 
     // Calculate pivot and rotation
