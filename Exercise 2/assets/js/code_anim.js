@@ -33,9 +33,11 @@ function resize() {
 function onScroll() {
     let position = 0;
 
-    if (document.documentElement && document.documentElement.scrollTop) {
+    if (document.documentElement && document.documentElement.scrollTop)
+    {
         position = document.documentElement.scrollTop;
-    } else if (document.body) {
+    } else if (document.body)
+    {
         position = document.body.scrollTop;
     }
 
@@ -73,7 +75,8 @@ function anim_code(pos) {
     ctx.beginPath();
     ctx.moveTo(0.5, height + 15);
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 9; i++)
+    {
         ctx.lineTo(stair_height * (i + 1) + width * 0.7 + 0.5, height - 0.5 - (stair_height * i));
         ctx.lineTo(stair_height * (i + 1) + width * 0.7 + 0.5, height - 0.5 - (stair_height * (i + 1)));
     }
