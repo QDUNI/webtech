@@ -11,61 +11,28 @@
 </head>
 
 <body>
-    <nav class="nav__wrapper">
-        <nav class="nav__logo">
-            <img class="logo" src="assets/img/logo/logo.svg" alt="logo">
-            <p id="title">Imperative Programming</p>
-        </nav>
-
-
-        <nav class="nav__expand">
-
-            <ul class="nav__links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Colleges.html">Colleges</a></li>
-                <li><a href="Tests.html">Tests</a></li>
-                <li><a href="FAQ.html">FAQ</a></li>
-                <li><a href="info.html">Info</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-            </ul>
-
-        </nav>
-        <nav class="navmob">
-            <a href="javascript:void(0);" class="icon" onclick="MenuClick()">
-                <img src="assets/img/menu/menu2.svg"></img>
-            </a>
-
-        </nav>
-    </nav>
-
-    <div id="navmob__links" class="navmob__links">
-        <a href="index.html">Home</a>
-        <a href="Colleges.html">Colleges</a>
-        <a href="Tests.html">Tests</a>
-        <a href="FAQ.html">FAQ</a>
-        <a href="info.html">Info</a>
-        <a href="Contact.html">Contact</a>
-    </div>
+    <script src="assets/js/navigator.js"></script>
 
     <div class="test__header">
-        <div class="test-header__banner">
-            <h1>Tests</1>
-        </div>
-        <h2>How to pass?</h2>
-        <p class="tests__paragraph">
-            You can only pass the course if you participate in the three partial exams (T1, T2, T3), and submit the three practical assignments on time (P1, P2, P3). Participation in lectures, seminars, or practical sessions is not compulsory, but staying away is
-            not a good idea. All six components are assessed separately. At the end a total grade for the theory part is calculated: T = 0.2 * T1 + 0.3 * T2 + 0.5 * T3. A total mark for the practical part is also calculated: P = 0.2 * P1 + 0.4 * P2 +
-            0.4 * P3. If all parts are missing, your final mark is "ND" (not participated). You have not passed the course. If two partial exams or two practical assignments are missing, your final grade is "NVD" (not passed). You have not passed the
-            course. If one partial exam and / or one practical grade is missing, your final grade is "AANV". You must then take an additional test and / or practical assignment to pass the course. If T &lt; 5.00 or P &lt; 5.00, the final grade E is the
-            minimum of T and P. If T≥5.00 and P≥5.00, the final grade E is the average of T and P. The final grade is rounded to one decimal place, except between 5 and 6: the final grade is rounded to integers. So if E≥5.500 it becomes a 6, if E &lt;5.500
-            it becomes a 5. If the final grade is at least 6, you have passed the course. If the final grade is lower than 4, you have not passed the course. If the final grade is 4,000 &lt; E &lt; 5,500, you can take an additional test and or practical
-            assignment to try to pass the course. The additional test covers the entire material. The grade that you obtain for this test is entered for the missing grade, or for an insufficient partial grade of your choice. The mark for the additional
-            practical assignment is entered for a missing or insufficient practical grade. The final grade is then recalculated according to the above rules. The additional test covers the entire material. The grade that you obtain for this test is entered
-            for the missing grade, or for an insufficient partial grade of your choice. The mark for the additional practical assignment is entered for a missing or insufficient practical grade. The final grade is then recalculated according to the above
-            rules. To participate in the additional test, the original result must be at least 4.
-        </p>
-        <h2>Tests</h2>
-        <div class="tests__paragraph">
+        <header class="test-header__banner">
+            <h1>Tests</h1>
+        </header>
+        <article class="tests__paragraph">
+            <h2>How to pass?</h2>
+            <p class="tests__paragraph">
+                You can only pass the course if you participate in the three partial exams (T1, T2, T3), and submit the three practical assignments on time (P1, P2, P3). Participation in lectures, seminars, or practical sessions is not compulsory, but staying away is
+                not a good idea. All six components are assessed separately. At the end a total grade for the theory part is calculated: T = 0.2 * T1 + 0.3 * T2 + 0.5 * T3. A total mark for the practical part is also calculated: P = 0.2 * P1 + 0.4 * P2
+                + 0.4 * P3. If all parts are missing, your final mark is "ND" (not participated). You have not passed the course. If two partial exams or two practical assignments are missing, your final grade is "NVD" (not passed). You have not passed
+                the course. If one partial exam and / or one practical grade is missing, your final grade is "AANV". You must then take an additional test and / or practical assignment to pass the course. If T &lt; 5.00 or P &lt; 5.00, the final grade
+                E is the minimum of T and P. If T≥5.00 and P≥5.00, the final grade E is the average of T and P. The final grade is rounded to one decimal place, except between 5 and 6: the final grade is rounded to integers. So if E≥5.500 it becomes a
+                6, if E &lt;5.500 it becomes a 5. If the final grade is at least 6, you have passed the course. If the final grade is lower than 4, you have not passed the course. If the final grade is 4,000 &lt; E &lt; 5,500, you can take an additional
+                test and or practical assignment to try to pass the course. The additional test covers the entire material. The grade that you obtain for this test is entered for the missing grade, or for an insufficient partial grade of your choice.
+                The mark for the additional practical assignment is entered for a missing or insufficient practical grade. The final grade is then recalculated according to the above rules. The additional test covers the entire material. The grade that
+                you obtain for this test is entered for the missing grade, or for an insufficient partial grade of your choice. The mark for the additional practical assignment is entered for a missing or insufficient practical grade. The final grade
+                is then recalculated according to the above rules. To participate in the additional test, the original result must be at least 4.
+            </p>
+            <h2>Tests</h2>
+
             <p>
                 Here you can find the material that will be tested in the coming 3 exams.
             </p>
@@ -107,49 +74,28 @@
 
                 </li>
             </ul>
-            <h2 class="test__header">Projects</h3>
-                <div class="tests__paragraph">
-                    <p>
-                        There will be 3 projects that you will have to hand in during the semester. Each will use topics explained during the lectures. Further information about the projects will be given during the seminars. But we do have a teaser of their subjects...
+            <h3 class="test__header">Projects</h3>
+            <div class="tests__paragraph">
+                <p>
+                    There will be 3 projects that you will have to hand in during the semester. Each will use topics explained during the lectures. Further information about the projects will be given during the seminars. But we do have a teaser of their subjects...
 
-                    </p>
-                    <br>
-                    <ol>
-                        <li>Mandelbrot</li>
-                        <li>Boardgame</li>
-                        <li>Paint</li>
-                    </ol>
-                </div>
+                </p>
+                <br>
+                <ol>
+                    <li>Mandelbrot</li>
+                    <li>Boardgame</li>
+                    <li>Paint</li>
+                </ol>
+            </div>
 
-        </div>
+        </article>
     </div>
 
-
-
-
-
-
-    <footer class="Split">
-        <div>
-            <p> Do you have questions about the course? Send us an email. </p>
-
-            <ul>
-                <li>Domplein 29</li>
-                <li>3512 JE Utrecht</li>
-                <li>Tel:<a href="tel:imperatiefprogrammeren@uu.nl"> 0623257696</a></li>
-                <li>Email: <a href="mailto:imperatiefprogrammeren@uu.nl"> imperatiefprogrammeren@uu.nl</a></li>
-            </ul>
-            <a id="Contact__btn" href="./Contact.html">See contact</a>
-        </div>
-        <div>
-            <div id="footer__logo">
-                <img src="assets/img/logo/logo.svg">
-                <span>Universiteit Utrecht</span>
-            </div>
-        </div>
-    </footer>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/webpage-edit.js"></script>
 
     <script src="assets/js/animation__code.js"></script>
+
 </body>
 
 </html>
