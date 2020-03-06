@@ -66,6 +66,10 @@ class InfoEntryLink extends InfoEntry {
     }
 }
 
+/*
+    All information on the course is from http://www.cs.uu.nl/education/vak/INFOIMP
+*/
+
 {
     const infoEntries = [
         new InfoEntryTextOnly("Coursecode", "INFOIMP"),
