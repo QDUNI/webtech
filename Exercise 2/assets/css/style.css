@@ -146,6 +146,7 @@ h4 {
     .navmob {
         display: none;
     }
+
     .nav__expand {
         display: inline-block;
     }
@@ -202,6 +203,7 @@ h4 {
         margin-left: 5%;
         font-size: 2vw;
     }
+
     .CardSpan {
         font-size: 1em;
     }
@@ -336,6 +338,7 @@ a:hover {
 .content {
     background-color: white;
     padding-top: 8vh;
+    margin-top: -5px;
 }
 
 .Split>div {
@@ -357,35 +360,42 @@ a:hover {
     .Split {
         flex-direction: column;
     }
+
     .split img {
         width: 100% !important;
         height: fit-content !important;
         margin-top: auto;
         margin-right: auto;
     }
+
     #img__algorithm {
         width: 70% !important;
         height: auto !important;
     }
+
     .split>div {
         display: flex;
         flex-direction: column;
         width: 100%;
         text-align: center;
     }
+
     .split>div>* {
         max-width: 80%;
         margin-left: auto;
         margin-right: auto;
     }
+
     #learn p {
         width: 80%;
     }
+
     #footer__logo {
         text-align: center;
         margin-left: auto;
         margin-right: auto;
     }
+
     footer>div {
         text-align: center;
     }
@@ -440,18 +450,22 @@ th {
 }
 
 @media only screen and (max-width: 700px) {
+
     table,
     td,
     th {
         font-size: 8px;
     }
+
     td,
     th {
         padding: 4px
     }
+
     .boxes {
         margin: 10px;
     }
+
     .text__planning {
         font-size: small;
     }
@@ -895,9 +909,11 @@ footer>div>ul>li>a {
     .edit__menu__option {
         width: 90%;
     }
+
     .edit__menu {
         width: 90vw;
     }
+
     #edit__menu__header__text {
         left: calc(50vw - 149px);
     }
