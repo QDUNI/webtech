@@ -524,6 +524,14 @@ footer>div>ul>li>a {
     display: inline-block;
 }
 
+#arrow {
+    position: fixed;
+    bottom: 2vh;
+    right: 2vh;
+    width: 8vh;
+    filter: opacity(0.5);
+}
+
 #Contact__btn {
     background-color: #efb501;
     width: 200px;

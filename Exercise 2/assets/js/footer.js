@@ -46,5 +46,26 @@
     footer.appendChild(footerDiv);
     footer.appendChild(footerDiv2);
 
+    // Link to own page
+    const linkTop = document.createElement("a");
+    linkTop.setAttribute("href", "#top");
+    const arrow = document.createElement("img");
+    arrow.setAttribute("src", "assets/img/arrow.svg");
+    arrow.setAttribute("id", "arrow");
+    linkTop.appendChild(arrow);
+    document.body.appendChild(linkTop);
+    window.addEventListener("scroll", () => {
+        let position;
+        if (document.documentElement && document.documentElement.scrollTop)
+        {
+            position = document.documentElement.scrollTop;
+        } else if (document.body)
+        {
+            position = document.body.scrollTop;
+        }
+
+        arrow.setAttribute("style", "opacity: " + position / 800);
+    });
+
     document.body.appendChild(footer);
 }
