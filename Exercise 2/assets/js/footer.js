@@ -16,6 +16,8 @@
     const a_2 = document.createElement("a");
     a_2.appendChild(document.createTextNode("imperatiefprogrammeren@uu.nl"));
     a_2.setAttribute("href", "mailto:imperatiefprogrammeren@uu.nl");
+    li_1.appendChild(a_1);
+    li_2.appendChild(a_2);
     const listItems = [document.createTextNode("Domplein 29"), document.createTextNode("3512 JE Utrecht"), li_1, li_2];;
     for (let i = 0; i < 4; i++)
     {
@@ -27,6 +29,7 @@
     footerContactButton.setAttribute("href", "./Contact.html");
     footerDiv.appendChild(footerDivP);
     footerDiv.appendChild(footerDivUl);
+
     footerDiv.appendChild(footerContactButton);
 
     const footerDiv2 = document.createElement("div");
