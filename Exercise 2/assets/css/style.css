@@ -529,6 +529,7 @@ footer>div>ul>li>a {
     bottom: 2vh;
     right: 2vh;
     width: 8vh;
+    opacity: 0;
     filter: opacity(0.5);
 }
 
