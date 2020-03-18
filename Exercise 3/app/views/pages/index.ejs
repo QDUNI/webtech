@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <title><%= title %></title>
-    <link rel='stylesheet' href='/stylesheets/style.css' />
-  </head>
-  <body>
-    <h1><%= title %></h1>
-    <p>Welcome to <%= title %></p>
-  </body>
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <nav>
+        <% include ../partials/navbar %>
+    </nav>
+
+    <img style="width: 100vw; height: auto;" src="/images/banner.png" alt="banner">
+</body>
+
 </html>
