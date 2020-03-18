@@ -14,53 +14,19 @@
 </head>
 
 <body>
-    <nav class="nav__wrapper">
-        <nav class="nav__logo">
-            <img class="logo" src="assets/img/logo/logo.svg" alt="logo" />
-            <p id="title">Imperative Programming</p>
-        </nav>
-
-
-        <nav class="nav__expand">
-
-            <ul class="nav__links">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="Colleges.html">Colleges</a></li>
-                <li><a href="Tests.html">Tests</a></li>
-                <li><a href="FAQ.html">FAQ</a></li>
-                <li><a href="info.html">Info</a></li>
-                <li><a href="Contact.html">Contact</a></li>
-            </ul>
-
-        </nav>
-        <nav class="navmob">
-            <a href="javascript:void(0);" class="icon" onclick="MenuClick()">
-                <img src="assets/img/menu/menu2.svg" alt="menu-icon" />
-            </a>
-
-        </nav>
-    </nav>
-
-    <div id="navmob__links" class="navmob__links">
-        <a href="index.html">Home</a>
-        <a href="Colleges.html">Colleges</a>
-        <a href="Tests.html">Tests</a>
-        <a href="FAQ.html">FAQ</a>
-        <a href="info.html">Info</a>
-        <a href="Contact.html">Contact</a>
-    </div>
+    <script src="assets/js/navigator.js"></script>
 
     <div class="Main">
-        <div id="header">
+        <header id="header">
             <div id="header__content">
                 <span>learn <br> the <span id="header__key">most widely</span> used <br> programming paradigm</span>
             </div>
-        </div>
+        </header>
 
 
 
         <div id="learn">
-            <div class="PrimaryColor">
+            <article class="PrimaryColor">
                 <h1>
                     What will you learn?
                 </h1>
@@ -68,9 +34,9 @@
                     Iterating with loops
                 </h2>
                 <p>An essential part of programming are loops. With loops you can iterate through a list or a sequence. You learn what type of loops exist and how to use them.</p>
-            </div>
+            </article>
             <canvas id="animation__code"></canvas>
-            <div class="Split">
+            <div class="Split content">
                 <div>
                     <div>
                         <h2>Data types</h2>
@@ -88,33 +54,20 @@
 
 
                 </div>
+
+
             </div>
 
         </div>
 
     </div>
+    <script src="assets/js/footer.js"></script>
+    <script src="assets/js/webpage-edit.js"></script>
 
-    <footer class="Split">
-        <div>
-            <p> Do you have questions about the course? Send us an email. </p>
 
-            <ul>
-                <li>Domplein 29</li>
-                <li>3512 JE Utrecht</li>
-                <li>Tel:<a href="tel:imperatiefprogrammeren@uu.nl"> 0623257696</a></li>
-                <li>Email: <a href="mailto:imperatiefprogrammeren@uu.nl"> imperatiefprogrammeren@uu.nl</a></li>
-            </ul>
-            <a id="Contact__btn" href="./Contact.html">See contact</a>
-        </div>
-        <div>
-            <div id="footer__logo">
-                <img src="assets/img/logo/logo.svg" alt="logo" />
-                <span>Universiteit Utrecht</span>
-            </div>
-        </div>
-    </footer>
 
     <script src="assets/js/code_anim.js"></script>
+
 </body>
 
 </html>
