@@ -33,9 +33,11 @@ function resize() {
 function onScroll() {
     let position = 0;
 
-    if (document.documentElement && document.documentElement.scrollTop) {
+    if (document.documentElement && document.documentElement.scrollTop)
+    {
         position = document.documentElement.scrollTop;
-    } else if (document.body) {
+    } else if (document.body)
+    {
         position = document.body.scrollTop;
     }
 
@@ -49,7 +51,7 @@ function anim_code(pos) {
     ctx.clearRect(0, 0, width, height);
     ctx.beginPath();
     ctx.rect(-0.5, -0.5, canvas.width + 1, canvas.height + 1);
-    ctx.fillStyle = "rgba(255, 255, 255, 0.0)";;
+    ctx.fillStyle = "#efb501";
     ctx.fill();
 
     // Calculate pivot and rotation
@@ -71,9 +73,10 @@ function anim_code(pos) {
     ctx.strokeStyle = "#3d3d3d";
     ctx.lineWidth = 2;
     ctx.beginPath();
-    ctx.moveTo(0.5, height + 15);
+    ctx.moveTo(0.5, height - 0.5);
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 9; i++)
+    {
         ctx.lineTo(stair_height * (i + 1) + width * 0.7 + 0.5, height - 0.5 - (stair_height * i));
         ctx.lineTo(stair_height * (i + 1) + width * 0.7 + 0.5, height - 0.5 - (stair_height * (i + 1)));
     }
@@ -93,7 +96,7 @@ function anim_code(pos) {
     ctx.rect(0, 0, -stair_height, stair_height);
 
     ctx.lineWidth = 5;
-    //ctx.strokeStyle = "#efb501";
+    ctx.strokeStyle = "#efb501";
     //ctx.stroke();
     //ctx.fillStyle = "#efb501";
     ctx.fillStyle = "white";
