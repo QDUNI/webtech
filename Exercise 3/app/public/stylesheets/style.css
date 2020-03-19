@@ -10,11 +10,20 @@ body {
     background-color: rgba(255, 255, 255, 0.0);
     position: fixed;
     overflow: hidden;
+    top: 0;
+}
+
+.nav__color--white a {
+    color: white;
+}
+
+.nav__color--black a {
+    color: black;
 }
 
 .nav__links__left {
     list-style: none;
-    color: white;
+
     float: left;
     margin-left: 120px;
 }
@@ -22,19 +31,16 @@ body {
 .nav__links__right {
     top: 0;
     list-style: none;
-    color: white;
     float: right;
 }
 
 .nav__links__left li {
     text-decoration: none;
-    color: white;
     display: inline-block;
     padding: 18px 35px;
 }
 
 .nav__links__left li a {
-    color: white;
     text-decoration: none;
 }
 
@@ -44,7 +50,6 @@ body {
 }
 
 .nav__links__right li a {
-    color: white;
     text-decoration: none;
 }
 
@@ -71,4 +76,77 @@ body {
 .nav__logo img {
     height: 75%;
     margin-top: 10px;
+}
+
+#search__bar {
+    margin-top: 80px;
+    background-color: #efb501;
+    width: 100vw;
+    height: 80px;
+    text-align: center;
+}
+
+#search__bar>div {
+    width: 80%;
+    height: 80px;
+    margin-left: 10%;
+    line-height: 80px;
+    vertical-align: middle;
+    text-align: center;
+    display: flex;
+}
+
+#search__bar>div>div {
+    width: 80%;
+    height: 80px;
+}
+
+#search__bar>div>div>input {
+    outline: lightgray;
+    background-color: white;
+    width: 100%;
+    height: 40px;
+    font-size: 14px;
+    padding-left: 2.5%;
+    padding-right: 2.5%;
+    box-sizing: border-box;
+    vertical-align: middle;
+    transition: 100ms ease-out;
+    outline: none;
+    border: none;
+    -webkit-appearance: none;
+}
+
+#search__bar>div>div>span {
+    line-height: 15px;
+    position: absolute;
+    left: 12%;
+    top: 90px;
+    height: 15px;
+    width: 130px;
+    font-size: 11px;
+    text-align: center;
+    background-color: white;
+    vertical-align: middle;
+    z-index: 0;
+}
+
+#search__bar>div>button {
+    width: 20%;
+    height: 40px;
+    background: none;
+    border: none;
+    outline: none;
+    margin: 0;
+    margin-left: 1%;
+    transition: 100ms ease-out;
+    margin-top: 20px;
+    font-size: 14px;
+}
+
+#search__bar>div>button:hover {
+    color: white;
+    background-color: black;
+    box-sizing: border-box;
+    transition: 100ms ease-in;
 }
