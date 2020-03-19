@@ -11,6 +11,7 @@ body {
     position: fixed;
     overflow: hidden;
     top: 0;
+    z-index: 100;
 }
 
 .nav__color--white a {
@@ -21,9 +22,13 @@ body {
     color: black;
 }
 
+.nav__color--black .nav__wrapper {
+    background-color: white;
+    border-bottom: 1px solid #efb501;
+}
+
 .nav__links__left {
     list-style: none;
-
     float: left;
     margin-left: 120px;
 }
@@ -149,4 +154,100 @@ body {
     background-color: black;
     box-sizing: border-box;
     transition: 100ms ease-in;
+    <<<<<<< HEAD=======
+}
+
+#search__wrapper {
+    width: 100%;
+    display: flex;
+    margin-top: 60px;
+    height: 80vh;
+}
+
+#search__wrapper h2 {
+    font-weight: 400;
+    padding: 0;
+    margin: 0;
+}
+
+.search__panel--top {
+    margin: 0;
+    padding: 0;
+    height: 80px;
+    line-height: 80px;
+    vertical-align: middle;
+    display: flex;
+    padding-right: 10%;
+}
+
+.search__panel--main {
+    justify-content: space-between;
+}
+
+.search__panel--bottom {
+    height: 100%;
+}
+
+#search__filters {
+    width: 30%;
+    padding-left: 10%;
+    box-sizing: border-box;
+    margin-right: 5%;
+    color: rgb(0, 0, 0);
+}
+
+#search__filters .search__panel--bottom {
+    border-right: 1px solid rgb(216, 216, 216);
+}
+
+#filter__indicator {
+    background-color: rgb(216, 216, 216);
+    width: 30px;
+    height: 30px;
+    border-radius: 100%;
+    vertical-align: middle;
+    line-height: 30px;
+    text-align: center;
+    margin-top: 25px;
+    margin-left: 10px;
+}
+
+#search__main {
+    width: 65%;
+}
+
+.group {
+    border-bottom: 1px solid rgb(216, 216, 216);
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 10px;
+}
+
+.group__header {
+    font-size: 16px;
+    color: #272727;
+    padding-left: 20px;
+    margin-bottom: 10px;
+    margin-top: 10px;
+}
+
+.filter {
+    -webkit-appearance: none;
+    outline: none;
+    border: none;
+    background: none;
+    text-align: left;
+    padding: 5px;
+    font-size: 16px;
+    color: rgb(75, 75, 75);
+    padding-left: 20px;
+}
+
+.filter:hover {
+    background-color: rgb(216, 216, 216);
+}
+
+#search__sort {
+    float: right;
+    >>>>>>>5679350ddee33f9bf3f7422ace3dfa85a483e596
 }
