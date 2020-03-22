@@ -135,6 +135,7 @@ h2 {
     outline: none;
     border: none;
     -webkit-appearance: none;
+    margin: 0;
 }
 
 #search__bar>div>div>span {
@@ -169,7 +170,6 @@ h2 {
     background-color: black;
     box-sizing: border-box;
     transition: 100ms ease-in;
-    <<<<<<< HEAD=======
 }
 
 #search__wrapper {
