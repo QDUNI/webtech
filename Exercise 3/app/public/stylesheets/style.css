@@ -214,8 +214,9 @@ h2 {
 #search__wrapper {
     width: 100%;
     display: flex;
-    margin-top: 60px;
-    height: 80vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: white;
 }
 
 #search__wrapper h2 {
@@ -490,6 +491,8 @@ input[type=text] {
 footer {
     background-color: black;
     padding: 20px;
+    position: relative;
+    z-index: 100;
 }
 
 #footer__logo__img {
