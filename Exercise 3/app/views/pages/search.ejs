@@ -3,6 +3,7 @@
 
 <head>
     <% include ../partials/head %>
+    <script src="/javascripts/search.js"></script>
 </head>
 
 <body>
@@ -13,14 +14,17 @@
     <div id="search__bar">
         <div>
             <div>
-                <input type="text" placeholder="" />
+                <input id="search__input"
+                       type="text"
+                       placeholder="" />
                 <span>SEARCH COURSE</span>
             </div>
-            <button>REFINE SEARCH</button>
+            <button id="search__button">REFINE SEARCH</button>
         </div>
     </div>
 
-    <div id="search__wrapper">
+    <div id="search__wrapper"
+         class="unselectable">
         <aside id="search__filters">
             <div class="search__panel--top">
                 <h2>Filters</h2>
@@ -45,9 +49,9 @@
         </aside>
         <div id="search__main">
             <div class="search__panel--top search__panel--main">
-                <h2>We found no courses</h2>
+                <h2 id="search__info">We found no courses</h2>
                 <div id="search__sort">
-                    <span>Sort by</span>
+                    <span>Sort by: </span>
                     <select id="sort__options">
                         <option value="date">Date</option>
                     </select>
@@ -56,6 +60,7 @@
             <div class="search__panel--bottom"></div>
         </div>
     </div>
+    <% include ../partials/footer %>
 </body>
 
 </html>

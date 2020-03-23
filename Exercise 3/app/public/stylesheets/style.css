@@ -2,6 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+    background-color: black;
 }
 
 @font-face {
@@ -17,6 +18,17 @@ h1 {
 h2 {
     font-size: 2.3em;
     font-family: AvenirNextW10-Medium;
+}
+
+.unselectable {
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* IE10+/Edge */
+    user-select: none;
+    /* Standard */
 }
 
 .nav__wrapper {
@@ -45,19 +57,22 @@ h2 {
 .nav__links__left {
     list-style: none;
     float: left;
-    margin-left: 80px;
+    margin-left: 40px;
+    padding: 0;
 }
 
 .nav__links__right {
     top: 0;
     list-style: none;
     float: right;
+    text-align: right;
+    padding: 0;
 }
 
 .nav__links__left li {
     text-decoration: none;
     display: inline-block;
-    padding: 18px 35px;
+    padding: 18px 10px;
 }
 
 .nav__links__left li a {
@@ -76,12 +91,17 @@ h2 {
 #signin_btn {
     background-color: black;
     border-radius: 8px;
-    padding: 12px 35px;
-    margin-right: 120px;
+    padding: 12px 20px;
+    margin-right: 50px;
 }
 
 #signin_btn a {
     color: white;
+}
+
+#menu__icon {
+    width: 50px;
+    margin-top: 8px;
 }
 
 .nav__logo {
@@ -97,6 +117,25 @@ h2 {
     height: 75%;
     margin-top: 10px;
 }
+
+.navmob {
+    display: none;
+    float: right;
+    margin-right: 20px;
+    margin-top: 7px;
+    filter: contrast(3);
+}
+
+@media only screen and (max-width: 650px) {
+    .navmob {
+        display: block;
+    }
+
+    .nav__expand {
+        display: none;
+    }
+}
+
 
 #search__bar {
     margin-top: 80px;
@@ -135,6 +174,7 @@ h2 {
     outline: none;
     border: none;
     -webkit-appearance: none;
+    margin: 0;
 }
 
 #search__bar>div>div>span {
@@ -169,14 +209,14 @@ h2 {
     background-color: black;
     box-sizing: border-box;
     transition: 100ms ease-in;
-    <<<<<<< HEAD=======
 }
 
 #search__wrapper {
     width: 100%;
     display: flex;
-    margin-top: 60px;
-    height: 80vh;
+    padding-top: 60px;
+    padding-bottom: 60px;
+    background-color: white;
 }
 
 #search__wrapper h2 {
@@ -258,8 +298,12 @@ h2 {
     padding-left: 20px;
 }
 
-.filter:hover {
+.filter--toggled {
     background-color: rgb(216, 216, 216);
+}
+
+.filter:hover {
+    cursor: pointer;
 }
 
 #search__sort {
@@ -349,18 +393,27 @@ input[type=text] {
     height: 70px;
 }
 
-#header__homepage img {
-    position: relative;
+#banner {
     width: 100vw;
+    height: fit-content;
+}
+
+#banner_img {
+    width: 100vw;
+    height: auto;
 }
 
 .header__homepage__content {
     position: absolute;
     z-index: 100;
     width: 80vw;
-    margin-left: 120px;
-    margin-top: 150px;
+    margin-left: 10vw;
+    margin-top: 10vw;
     color: white;
+}
+
+.header__homepage__content h1 {
+    font-size: 3vw;
 }
 
 #search {
@@ -383,12 +436,103 @@ input[type=text] {
     cursor: pointer;
 }
 
+@media only screen and (max-width: 650px) {
+    .header__homepage__content {
+        box-sizing: border-box;
+        position: absolute;
+        z-index: 100;
+        width: 100vw;
+        margin-left: 0;
+        color: white;
+        top: 50px;
+        text-align: center;
+        font-size: 10px;
+    }
+
+    .header__homepage__content h1 {
+        font-size: 24px;
+    }
+
+    #search {
+        margin: 0;
+        width: 60%;
+    }
+
+    .search__btn {
+        padding: 14px 20px;
+    }
+
+    #banner {
+        height: 40vh;
+        width: 100vw;
+        background-image: url("/images/banner.png");
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: 50% 50%;
+    }
+
+    #banner_img {
+        display: none;
+    }
+}
+
 .mainpage {
     text-align: center;
     padding: 40px;
+    background-color: white;
+    margin: 0;
 }
 
 #mainpage__text {
     width: 50%;
     margin: auto;
+}
+
+footer {
+    background-color: black;
+    padding: 20px;
+    position: relative;
+    z-index: 100;
+}
+
+#footer__logo__img {
+    width: 50px;
+}
+
+#footer__logo {
+    height: 50px;
+    vertical-align: middle;
+    line-height: 50px;
+    color: white;
+    display: inline-flex;
+    font-size: 18px;
+    margin-left: 40px;
+    max-width: 300px;
+}
+
+#footer__logo>span {
+    margin-left: 12px;
+}
+
+#footer__links {
+    color: white;
+    list-style-type: none;
+    float: right;
+    margin-right: 40px;
+}
+
+#footer__links>li {
+    float: right;
+    margin-left: 10px;
+}
+
+#footer__links>li:hover {
+    cursor: pointer;
+}
+
+#project {
+    color: rgb(143, 143, 143);
+    text-align: center;
+    width: 100vw;
+    padding: 10px;
 }
