@@ -436,6 +436,7 @@ input[type=text] {
 #banner {
     width: 100vw;
     height: fit-content;
+    background-color: white;
 }
 
 #banner_img {
@@ -520,14 +521,56 @@ input[type=text] {
 
 .mainpage {
     text-align: center;
-    padding: 40px;
+    padding-top: 40px;
     background-color: white;
     margin: 0;
 }
 
-#mainpage__text {
+#mainpage__text {}
+
+#mainpage__uu {
+    margin-top: 30px;
+    background: rgb(241, 241, 241);
+    padding-top: 70px;
+    display: flex;
+    padding-bottom: 70px;
+}
+
+#mainpage__uu>div {
     width: 50%;
     margin: auto;
+    margin: 20px;
+    text-align: left;
+}
+
+#mainpage__uu>img {
+    margin-left: 60px;
+    width: 300px;
+    height: auto;
+    margin: auto;
+}
+
+#mainpage__uu>h1 {
+    font-size: 30px;
+}
+
+.mainpage__panel {
+    padding: 20px;
+    padding-left: 200px;
+    padding-right: 200px;
+}
+
+@media only screen and (max-width: 650px) {
+    .mainpage__panel {
+        padding: 20px;
+        padding-left: 80px;
+        padding-right: 80px;
+        margin: auto;
+    }
+
+    #mainpage__uu>div {
+        width: 80%;
+    }
 }
 
 footer {
