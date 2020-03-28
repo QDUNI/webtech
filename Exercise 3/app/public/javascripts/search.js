@@ -3,6 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchButton = document.getElementById("search__button");
     const searchInfo = document.getElementById("search__info");
     const filterIndicator = document.getElementById("filter__indicator");
+    const searchPanelBottom = document.getElementById("search__panel--bottom");
 
     const filters = document.getElementsByClassName("filter");
 
@@ -47,4 +48,9 @@ document.addEventListener("DOMContentLoaded", () => {
     console.log(courses);
 
     searchInfo.innerHTML = "We found " + courses.length + " courses";
+
+    for (let i = 0; i < courses.length; i++)
+    {
+
+    }
 });

@@ -56,6 +56,19 @@ router.get("/signin", function (req, res, next) {
     res.render("pages/signin", { title: "Sign in UU" });
 });
 
+router.get("/course/:course_id?", function (req, res, next) {
+    const sql = "SELECT * FROM Courses WHERE course_id = ?";
+    db.get(sql, req.param("course_id"), (err, respons) => {
+        if (err)
+        {
+            return console.error(err.message);
+        } else
+        {
+            res.render("pages/course", { title: "Course", teacher: respons.teacher });
+        }
+    });
+});
+
 router.post("/signin", function (req, res) {
     const { studentid, password } = req.body;
     let sql = 'SELECT * FROM Students WHERE student_nr = ? AND password = ?';

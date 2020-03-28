@@ -1,0 +1,102 @@
+.course_block{
+    align-self: center;
+    background-color: white;
+    margin: 30px;
+    border-radius: 25px;
+}
+hr{
+    color: #efb501;
+}
+
+.text_center{
+    text-align: center;
+    background-color: #404040;
+    color: #efb501;
+    padding: 20px 0px;
+    border-radius: 25px;
+}
+
+dt, dd{
+    text-align: left;
+    padding-top: 20px;
+    padding-left: 20px;
+    font-size: large;
+}
+
+dd{
+    color: #efb501;
+
+}
+
+p{
+    text-align: left;
+    padding: 40px;
+}
+
+span{
+    display: inline-block;
+    font-size: 20px;
+    
+}
+
+.lowest_dd{
+    padding-bottom: 20px;
+}
+
+.course_info{
+    background-color: #404040;
+    border-radius: 25px;
+    color: white;
+
+}
+
+.portrait{
+    width: 30%;
+    border-radius: 100%;
+    display: inline-block;
+    margin: 0px 40px 20px 40px;
+    vertical-align: middle;
+}
+
+.course_proffessor{
+    background-color: lightgray;
+    padding-top: 20px;
+    border-radius: 25px;
+}
+
+body{
+    background-color: #efb501;
+}
+
+@media only screen and (min-width: 768px) {
+    .course_block{
+        margin: 30px 150px;
+    }
+    span{
+        font-size: 20px;
+    }
+}
+@media only screen and (min-width: 1024px){
+    dt, dd , .text_center{
+        font-size: 30px;
+    }
+
+    p{
+        font-size: 20px;
+    }
+    span{
+        font-size: 30px;
+    }
+}
+@media only screen and (min-width: 1400px){
+    .course_block{
+        margin: 50px 300px;
+    }
+    dt{
+        margin-left: 100px;
+    }
+    dd{
+        margin-left: 150px;
+    }
+
+}
