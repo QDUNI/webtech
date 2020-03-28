@@ -33,9 +33,9 @@
             <div class="search__panel--bottom">
                 <div class="group">
                     <div class="group__header">Program</div>
-                    <button class="filter">Beta Science</button>
-                    <button class="filter">etc</button>
-                    <button class="filter">etc</button>
+                    <button class="filter">Informatica</button>
+                    <button class="filter">Wiskunde</button>
+                    <button class="filter">Informatiekunde</button>
                 </div>
 
                 <div class="group">
@@ -43,7 +43,14 @@
                     <button class="filter">level 1</button>
                     <button class="filter">level 2</button>
                     <button class="filter">level 3</button>
-                    <button class="filter">level 4</button>
+                </div>
+
+                <div class="group">
+                    <div class="group__header">Semester</div>
+                    <button class="filter">1</button>
+                    <button class="filter">2</button>
+                    <button class="filter">3</button>
+                    <button class="filter">4</button>
                 </div>
             </div>
         </aside>
@@ -62,6 +69,11 @@
         </div>
     </div>
     <% include ../partials/footer %>
+
+    <script id="courses__data"
+            type="application/json">
+            <%- JSON.stringify(courses) %> 
+    </script>
 </body>
 
 </html>

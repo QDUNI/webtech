@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const filters = document.getElementsByClassName("filter");
 
     searchButton.onclick = () => {
-        window.location.href = "/search/" + searchInput.value;
+        window.location.href = "/search?value=" + searchInput.value;
     };
 
     const filterToggle = function (element) {
@@ -41,4 +41,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
         filterIndicator.innerHTML = numSelectedFilters;
     }
+
+    var data = document.getElementById('courses__data').textContent.trim();
+    var courses = JSON.parse(data);
+    console.log(courses);
+
+    searchInfo.innerHTML = "We found " + courses.length + " courses";
 });

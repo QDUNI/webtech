@@ -29,8 +29,26 @@ router.get('/', function (req, res, next) {
 
 router.get;
 
-router.get("/search/:value?", function (req, res, next) {
-    res.render("pages/search", { title: "Search courses", value: req.param("value") });
+router.get("/search/:value?/:program?/:semester?/:level?", function (req, res, next) {
+    const sql = "SELECT * FROM Courses WHERE title LIKE ?";
+    db.all(sql, req.param("value") + "%", (err, rows) => {
+        if (err)
+        {
+            return console.error(err.message);
+        } else
+        {
+            //console.log(rows);
+
+            var courses = [];
+            for (let i = 0; i < rows.length; i++)
+            {
+                courses.push(JSON.stringify(rows[i]));
+            }
+
+            res.render("pages/search", { title: "Search courses", value: req.param("value"), courses: courses });
+        }
+    }
+    );
 });
 
 
