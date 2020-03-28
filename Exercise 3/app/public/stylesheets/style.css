@@ -526,7 +526,11 @@ input[type=text] {
     margin: 0;
 }
 
-#mainpage__text {}
+.mainpage>h2 {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+}
 
 #mainpage__uu {
     margin-top: 30px;
@@ -539,19 +543,38 @@ input[type=text] {
 #mainpage__uu>div {
     width: 50%;
     margin: auto;
-    margin: 20px;
     text-align: left;
+    margin-right: 30px;
 }
 
 #mainpage__uu>img {
     margin-left: 60px;
-    width: 300px;
+    width: 30vh;
     height: auto;
     margin: auto;
 }
 
 #mainpage__uu>h1 {
     font-size: 30px;
+}
+
+#mainpage__uu a {
+    background-color: black;
+    color: white;
+    border: none;
+    padding: 5px 12px 5px 12px;
+    outline: none;
+    -webkit-appearance: none;
+    text-decoration: none;
+    margin-top: 15px;
+    display: block;
+    width: 100px;
+}
+
+#mainpage__uu a:hover {
+    background-color: #efb501;
+    color: black;
+    cursor: pointer;
 }
 
 .mainpage__panel {
@@ -568,8 +591,23 @@ input[type=text] {
         margin: auto;
     }
 
+    #mainpage__uu {
+        flex-wrap: wrap;
+    }
+
     #mainpage__uu>div {
         width: 80%;
+        text-align: center;
+        margin-right: auto;
+    }
+
+    #mainpage__uu>img {
+        margin-top: 30px;
+    }
+
+    #mainpage__uu a {
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
