@@ -27,8 +27,6 @@ router.get('/', function (req, res, next) {
     console.log(req.session.userid);
 });
 
-router.get;
-
 router.get("/search/:value?/:program?/:semester?/:level?", function (req, res, next) {
     const sql = "SELECT * FROM Courses WHERE title LIKE ?";
     db.all(sql, req.param("value") + "%", (err, rows) => {
@@ -64,7 +62,7 @@ router.get("/course/:course_id?", function (req, res, next) {
             return console.error(err.message);
         } else
         {
-            res.render("pages/course", { title: "Course", teacher: respons.teacher });
+            res.render("pages/course", { title: "course", teacher: respons.teacher });
         }
     });
 });
