@@ -665,3 +665,29 @@ footer {
     height: 230px;
     margin-bottom: 30px;
 }
+
+.course__panel>img {}
+
+.course__panel>div {
+    width: 70%;
+    float: right;
+    font-size: 15px;
+    color: rgb(131, 131, 131);
+}
+
+.course__panel>div>h2 {
+    font-size: 25px;
+    margin: 20px !important;
+    margin-left: 0px !important;
+    color: black;
+    margin-bottom: 15px !important;
+}
+
+.course__panel>div>span {}
+
+.course__panel>div>div {
+    height: 110px;
+    width: 80%;
+    overflow: hidden;
+    box-sizing: border-box;
+}

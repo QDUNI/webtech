@@ -52,13 +52,24 @@ document.addEventListener("DOMContentLoaded", () => {
 
     for (let i = 0; i < courses.length; i++)
     {
+        console.log(courses[i]);
+        const course = JSON.parse(courses[i]);
         const coursePanel = document.createElement("div");
         coursePanel.setAttribute("class", "course__panel");
 
-        const course__panel__img = document.createElement("img");
-        const course__panel__div = document.createElement("div");
-        coursePanel.appendChild(course__panel__img);
-        coursePanel.appendChild(course__panel__div);
+        const coursePanelImg = document.createElement("img");
+        const coursePanelDiv = document.createElement("div");
+        coursePanel.appendChild(coursePanelImg);
+        const coursePanelTitle = document.createElement("h2");
+        coursePanelTitle.innerHTML = course.title;
+        const coursePanelProgram = document.createElement("span");
+        coursePanelProgram.innerHTML = course.program + "<br><br>";
+        const coursePanelDescription = document.createElement("div");
+        coursePanelDescription.innerHTML = course.description;
+        coursePanelDiv.appendChild(coursePanelTitle);
+        coursePanelDiv.appendChild(coursePanelProgram);
+        coursePanelDiv.appendChild(coursePanelDescription);
+        coursePanel.appendChild(coursePanelDiv);
 
         searchResults.appendChild(coursePanel);
     }
