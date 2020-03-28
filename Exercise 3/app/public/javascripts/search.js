@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchButton = document.getElementById("search__button");
     const searchInfo = document.getElementById("search__info");
     const filterIndicator = document.getElementById("filter__indicator");
-    const searchPanelBottom = document.getElementById("search__panel--bottom");
 
     const filters = document.getElementsByClassName("filter");
 
@@ -49,8 +48,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
     searchInfo.innerHTML = "We found " + courses.length + " courses";
 
+    const searchResults = document.getElementById("search__results");
+
     for (let i = 0; i < courses.length; i++)
     {
+        const coursePanel = document.createElement("div");
+        coursePanel.setAttribute("class", "course__panel");
 
+        const course__panel__img = document.createElement("img");
+        const course__panel__div = document.createElement("div");
+        coursePanel.appendChild(course__panel__img);
+        coursePanel.appendChild(course__panel__div);
+
+        searchResults.appendChild(coursePanel);
     }
 });

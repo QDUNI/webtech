@@ -62,7 +62,7 @@ router.get("/course/:course_id?", function (req, res, next) {
             return console.error(err.message);
         } else
         {
-            res.render("pages/course", { title: "course", teacher: respons.teacher });
+            res.render("pages/course", { title: "course", teacher: respons.teacher_id });
         }
     });
 });
