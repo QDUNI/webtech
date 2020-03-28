@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const filters = document.getElementsByClassName("filter");
 
     searchButton.onclick = () => {
-        alert("You searched: " + searchInput.value + ".");
+        window.location.href = "/search/" + searchInput.value;
     };
 
     const filterToggle = function (element) {

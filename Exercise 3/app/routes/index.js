@@ -22,43 +22,51 @@ router.use(session({
 }));
 
 /* GET home page. */
-router.get('/', function(req, res, next) {
+router.get('/', function (req, res, next) {
     res.render('pages/index', { title: 'Express' });
     console.log(req.session.userid);
 });
 
-router.get("/search", function(req, res, next) {
-    res.render("pages/search", { title: "Search courses" });
+router.get;
+
+router.get("/search/:value?", function (req, res, next) {
+    res.render("pages/search", { title: "Search courses", value: req.param("value") });
 });
 
 
-router.get("/signin", function(req, res, next) {
+router.get("/signin", function (req, res, next) {
     res.render("pages/signin", { title: "Sign in UU" });
 });
 
-router.post("/signin", function(req, res) {
-    const { studentid, password } = req.body
+router.post("/signin", function (req, res) {
+    const { studentid, password } = req.body;
     let sql = 'SELECT * FROM Students WHERE student_nr = ? AND password = ?';
 
-    if (studentid && password) {
+    if (studentid && password)
+    {
         db.get(sql, [studentid, password], (err, response) => {
-            if (err) {
+            if (err)
+            {
                 return console.error(err.message);
-            } else {
-                if (response) {
+            } else
+            {
+                if (response)
+                {
                     req.session.loggedin = true;
                     req.session.userid = response.student_nr;
                     res.redirect('/');
 
 
-                } else {
+                } else
+                {
                     res.send('incorrect Username and Password!');
                     res.end();
                 }
             }
 
-        })
-    } else {
+        });
+    } else
+    {
         res.send('Please enter Username and Password!');
         res.end();
     }
