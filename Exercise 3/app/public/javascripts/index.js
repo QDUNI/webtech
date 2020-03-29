@@ -3,6 +3,6 @@ document.addEventListener("DOMContentLoaded", () => {
     const searchInput = document.getElementById("search");
 
     searchButton.onclick = () => {
-        window.location.href = "/search/" + searchInput.value;
+        window.location.href = "/search?value=" + searchInput.value;
     };
 });

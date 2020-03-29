@@ -696,7 +696,15 @@ footer {
     margin-bottom: 30px;
 }
 
-.course__panel>img {}
+.course__panel:hover {
+    cursor: pointer;
+}
+
+.course__panel>img {
+    margin-left: 25px;
+    margin-top: 40px;
+    height: 150px;
+}
 
 .course__panel>div {
     width: 70%;
