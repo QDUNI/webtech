@@ -121,6 +121,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
             const coursePanel = document.createElement("div");
             coursePanel.setAttribute("class", "course__panel");
+            coursePanel.onclick = () => {
+                window.location.href = "/course?course_id=" + course.course_id;
+            };
 
             const coursePanelImg = document.createElement("img");
             var src = "";

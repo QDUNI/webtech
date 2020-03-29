@@ -666,6 +666,10 @@ footer {
     margin-bottom: 30px;
 }
 
+.course__panel:hover {
+    cursor: pointer;
+}
+
 .course__panel>img {
     margin-left: 25px;
     margin-top: 40px;
