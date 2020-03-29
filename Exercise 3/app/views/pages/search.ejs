@@ -16,7 +16,8 @@
             <div>
                 <input id="search__input"
                        type="text"
-                       placeholder="" />
+                       placeholder=""
+                       value="<%= value %>" />
                 <span>SEARCH COURSE</span>
             </div>
             <button id="search__button">REFINE SEARCH</button>
@@ -28,39 +29,55 @@
         <aside id="search__filters">
             <div class="search__panel--top">
                 <h2>Filters</h2>
-                <div id="filter__indicator">0</div>
+                <div id="filter__indicator">10</div>
             </div>
             <div class="search__panel--bottom">
                 <div class="group">
                     <div class="group__header">Program</div>
-                    <button class="filter">Beta Science</button>
-                    <button class="filter">etc</button>
-                    <button class="filter">etc</button>
+                    <button
+                            class="filter filter--toggled">Computer_Science</button>
+                    <button class="filter filter--toggled">Mathematics</button>
+                    <button
+                            class="filter filter--toggled">Information_Science</button>
                 </div>
 
                 <div class="group">
                     <div class="group__header">Academic levels</div>
-                    <button class="filter">level 1</button>
-                    <button class="filter">level 2</button>
-                    <button class="filter">level 3</button>
-                    <button class="filter">level 4</button>
+                    <button class="filter filter--toggled">level_1</button>
+                    <button class="filter filter--toggled">level_2</button>
+                    <button class="filter filter--toggled">level_3</button>
+                </div>
+
+                <div class="group">
+                    <div class="group__header">Semester</div>
+                    <button class="filter filter--toggled">1</button>
+                    <button class="filter filter--toggled">2</button>
+                    <button class="filter filter--toggled">3</button>
+                    <button class="filter filter--toggled">4</button>
                 </div>
             </div>
         </aside>
         <div id="search__main">
             <div class="search__panel--top search__panel--main">
-                <h2 id="search__info">We found no courses</h2>
-                <div id="search__sort">
+                <h2 id="search__info">We found no courses on: "<%= value %>"
+                </h2>
+                <!-- <div id="search__sort">
                     <span>Sort by: </span>
                     <select id="sort__options">
                         <option value="date">Date</option>
                     </select>
-                </div>
+                </div> -->
             </div>
-            <div class="search__panel--bottom"></div>
+            <div id="search__results"
+                 class="search__panel--bottom"></div>
         </div>
     </div>
     <% include ../partials/footer %>
+
+    <script id="courses__data"
+            type="application/json">
+            <%- JSON.stringify(courses) %> 
+    </script>
 </body>
 
 </html>
