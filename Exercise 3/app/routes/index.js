@@ -145,12 +145,12 @@ router.post("/signin", function(req, res) {
 router.post("/signup", function(req, res) {
     const { firstname, lastname, studentid, password, program, level } = req.body;
     console.log(firstname, lastname, studentid, password, program, level);
-    let sql = 'INSERT INTO Students (students_id, student_nbr, firstname, lastname, programm, acd_level, password) VALUES(?,?,?,?,?,?,?)';
+    let sql = 'INSERT INTO Students (students_id, student_nr, firstname, lastname, programm, acd_level, password) VALUES(?,?,?,?,?,?,?)';
 
     db.get(sql, [null, studentid, firstname, lastname, program, level, md5(password)], (err, result) => {
         if (err) {
             console.log("error sign up");
-            if (err.message == "SQLITE_CONSTRAINT: UNIQUE constraint failed: Students.student_nbr") {
+            if (err.message == "SQLITE_CONSTRAINT: UNIQUE constraint failed: Students.student_nr") {
                 res.render("pages/signup", { title: "Sign up UU", error: "StudentsID already in use try again" });
 
             }
@@ -158,7 +158,7 @@ router.post("/signup", function(req, res) {
         } else {
 
             req.session.loggedin = true;
-            res.redirect('');
+            res.redirect('/');
 
 
         }
