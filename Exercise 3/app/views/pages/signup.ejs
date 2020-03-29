@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<Html>
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body id="RegisterPage">
+    <div class="Register__view">
+        <div class="Register__wrap">
+
+            <form class="Register__form" method="POST" action="/signup" onsubmit="return validateForm()">
+                <span class=" Register__form__title "> Sign Up </span>
+
+                <span id="Register_error" class="Register__form__error "> <%- error %> </span>
+
+                <div class="Register_input ">
+                    <input class="input" type="text" class="name" name="firstname" placeholder="First Name">
+                </div>
+
+                <div class="Register_input ">
+                    <input class="input" type="text" class="name" name="lastname" placeholder="Last Name">
+                </div>
+
+                <div class="Register_input ">
+                    <input class="input" type="text" id="studentid" name="studentid" placeholder="StudentID">
+                </div>
+
+                <div class="Register_input ">
+                    <input class="input" type="password" id="password" name="password" placeholder="Password">
+                </div>
+
+                <div class="Register_input ">
+                    <input class="input" type="password" id="repassword" name="repassword" placeholder="Retype Password">
+                </div>
+
+
+                <select class="dropdown" name="program">
+                    <option  value="" disabled selected>Select your program</option>
+                    <option  value = "Computer Science" >Computer Science</option>
+                    <option  value = "Information Science">Information Science</option>
+                    <option  value = "Mathematics">Mathematics</option>
+                 </select>
+
+                <select class="dropdown" name="level">
+                    <option  value="" disabled selected>Select your bachelor</option>
+                    <option  value = "Bachelor" >Bachelor</option>
+                    <option  value = "Master">Master</option>
+                 </select>
+
+
+
+                <div class="Register__form__btn__wrapper ">
+                    <div class="Register__form__bgbtn "></div>
+                    <button id="Register_btn" class="Register-form-btn "> Register </button>
+
+                </div>
+
+                <div class="Register__bottomtext ">
+                    <span class="Register__bottomtext_txt1 ">
+                        Already an account ?
+                    </span>
+
+                    <a class="Register__bottomtext_txt2 " href="/signin">
+                        Sign In
+                    </a>
+                </div>
+            </form>
+
+        </div>
+
+    </div>
+
+</body>
+<script src="/javascripts/validatesignup.js "></script>
+
+</Html>

@@ -4,6 +4,7 @@ var router = express.Router();
 var session = require('express-session');
 var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('./database.db');
+var md5 = require('js-md5');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
@@ -47,6 +48,10 @@ router.get("/search/:value?", function(req, res, next) {
 
 router.get("/signin", function(req, res, next) {
     res.render("pages/signin", { title: "Sign in UU" });
+});
+
+router.get("/signup", function(req, res, next) {
+    res.render("pages/signup", { title: "Sign up UU", error: "" });
 });
 
 router.get("/course/:course_id?", function(req, res, next) {
@@ -116,16 +121,44 @@ router.post("/signin", function(req, res) {
 
 
                 } else {
-                    res.send('incorrect Username and Password!');
+                    console.log("incorrect");
+                    res.redirect('/signin?status=error');
                     res.end();
+
                 }
             }
 
         });
+
     } else {
-        res.send('Please enter Username and Password!');
+        res.redirect('/signin?status=empty');
         res.end();
     }
 });
+
+router.post("/signup", function(req, res) {
+    const { firstname, lastname, studentid, password, program, level } = req.body;
+    console.log(firstname, lastname, studentid, password, program, level);
+    let sql = 'INSERT INTO Students (students_id, student_nbr, firstname, lastname, programm, acd_level, password) VALUES(?,?,?,?,?,?,?)';
+
+    db.get(sql, [null, studentid, firstname, lastname, program, level, md5(password)], (err, result) => {
+        if (err) {
+            console.log("error sign up");
+            if (err.message == "SQLITE_CONSTRAINT: UNIQUE constraint failed: Students.student_nbr") {
+                res.render("pages/signup", { title: "Sign up UU", error: "StudentsID already in use try again" });
+
+            }
+            return console.error(err.message);
+        } else {
+
+            req.session.loggedin = true;
+            res.redirect('');
+
+
+        }
+    });
+
+});
+
 
 module.exports = router;
