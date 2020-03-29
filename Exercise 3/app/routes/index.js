@@ -1,13 +1,12 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var router = express.Router();
+var session = require('express-session');
+var sqlite3 = require('sqlite3').verbose();
+var db = new sqlite3.Database('./database.db');
 
 router.use(bodyParser.urlencoded({ extended: true }));
 router.use(bodyParser.json());
-
-var sqlite3 = require('sqlite3').verbose();
-var db = new sqlite3.Database('./database.db');
-var session = require('express-session');
 
 //session setup 
 router.use(session({
@@ -49,20 +48,14 @@ router.post("/signin", function(req, res) {
                     req.session.loggedin = true;
                     req.session.userid = response.student_nr;
                     res.redirect('/');
-
-
                 } else {
-                    res.send('incorrect Username and Password!');
-                    res.end();
+                    // handle incorrect username and/or password!
                 }
             }
-
         })
     } else {
-        res.send('Please enter Username and Password!');
-        res.end();
+        // handle empty username and/or password!
     }
-
 });
 
 module.exports = router;
