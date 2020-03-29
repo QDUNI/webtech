@@ -359,6 +359,14 @@ h2 {
     overflow-y: hidden;
 }
 
+#RegisterPage {
+    background-image: url("../images/banner.png");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100vh;
+}
+
 .SigninForm__wrapper {
     width: 80%;
     height: 500px;
@@ -368,6 +376,17 @@ h2 {
     display: block;
     margin-top: 100px;
     overflow-y: hidden;
+}
+
+.RegisterForm__wrapper {
+    width: 80%;
+    height: 970px;
+    border-radius: 25px;
+    background-color: white;
+    margin: auto;
+    display: block;
+    margin-top: 100px;
+    overflow-y: ;
 }
 
 .SigninForm__left {
@@ -409,6 +428,17 @@ h2 {
 }
 
 input[type=text] {
+    width: 90%;
+    font-size: 20px;
+    padding: 12px 20px;
+    margin: 30px 0;
+    margin-left: 50px;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid black;
+}
+
+.dropdown{
     width: 90%;
     font-size: 20px;
     padding: 12px 20px;

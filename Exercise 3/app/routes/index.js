@@ -54,6 +54,10 @@ router.get("/signin", function (req, res, next) {
     res.render("pages/signin", { title: "Sign in UU" });
 });
 
+router.get("/register", function (req, res, next) {
+    res.render("pages/register", { title: "Register in UU" });
+});
+
 router.get("/course/:course_id?", function (req, res, next) {
     const sql = "SELECT * FROM Courses WHERE course_id = ?";
     db.get(sql, req.param("course_id"), (err, respons) => {
