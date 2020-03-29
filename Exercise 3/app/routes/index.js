@@ -27,7 +27,7 @@ router.get('/', function (req, res, next) {
     console.log(req.session.userid);
 });
 
-router.get("/search/:value?/:program?/:semester?/:level?", function (req, res, next) {
+router.get("/search/:value?", function (req, res, next) {
     const sql = "SELECT * FROM Courses WHERE title LIKE ?";
     db.all(sql, req.param("value") + "%", (err, rows) => {
         if (err)
@@ -60,10 +60,10 @@ router.get("/course/:course_id?", function (req, res, next) {
         if (err)
         {
             return console.error(err.message);
-        } 
+        }
         else
         {
-            console.log(respons.teacher_id)
+            console.log(respons.teacher_id);
             const sql2 = "SELECT * FROM Teachers WHERE teacher_id = ?";
             db.get(sql2, respons.teacher_id, (err2, respons2) => {
                 if (err2)
@@ -72,40 +72,49 @@ router.get("/course/:course_id?", function (req, res, next) {
                 }
                 else
                 {
-                    res.render("pages/course", { title: "course", teacher: (respons2.firstname + " " + respons2.lastname)
-                , description: respons.description, study_program: respons.program, course_title: respons.title
-                , semester: "This course takes place in " + semesterstring(respons.semester) +"."
-                , level: "The level of this course is " + levelcourse(respons.ac_level) +"."});
-                }});
+                    res.render("pages/course", {
+                        title: "course", teacher: (respons2.firstname + " " + respons2.lastname)
+                        , description: respons.description, study_program: respons.program, course_title: respons.title
+                        , semester: "This course takes place in " + semesterstring(respons.semester) + "."
+                        , level: "The level of this course is " + levelcourse(respons.ac_level) + "."
+                    });
+                }
+            });
         }
     });
 });
 
-function semesterstring(semester){
-    if(semester == 1){
-        return "the first semester"
+function semesterstring(semester) {
+    if (semester == 1)
+    {
+        return "the first semester";
 
     }
-    else if(semester == 2){
-        return "the second semester"
+    else if (semester == 2)
+    {
+        return "the second semester";
 
     }
-    else if(semester == 3){
-        return "the third semester"
+    else if (semester == 3)
+    {
+        return "the third semester";
 
     }
-    else if(semester == 4){
-        return "the fourth semester"
+    else if (semester == 4)
+    {
+        return "the fourth semester";
 
     }
 }
 
-function levelcourse(level){
-    if(level == "level3"){
-        return "master"
+function levelcourse(level) {
+    if (level == "level3")
+    {
+        return "master";
     }
-    else{
-        return "bachelor"
+    else
+    {
+        return "bachelor";
     }
 }
 

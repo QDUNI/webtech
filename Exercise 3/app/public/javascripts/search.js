@@ -123,6 +123,21 @@ document.addEventListener("DOMContentLoaded", () => {
             coursePanel.setAttribute("class", "course__panel");
 
             const coursePanelImg = document.createElement("img");
+            var src = "";
+            switch (course.program)
+            {
+                case "Computer Science":
+                    src = "computer.svg";
+                    break;
+                case "Information Science":
+                    src = "information.svg";
+                    break;
+                case "Mathematics":
+                    src = "formula.svg";
+                    break;
+                default: break;
+            }
+            coursePanelImg.setAttribute("src", "/images/" + src);
             const coursePanelDiv = document.createElement("div");
             coursePanel.appendChild(coursePanelImg);
             const coursePanelTitle = document.createElement("h2");
