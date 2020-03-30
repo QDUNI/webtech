@@ -7,9 +7,21 @@
     <link rel="stylesheet"
           type="text/css"
           href="/stylesheets/stylesheet.css">
+    <script src="/javascripts/course.js"></script>
 </head>
 
 <body>
+    <div id="info__box">
+        <% if (loggedin && !registered) { %><button
+                id="register__btn">Register</button><% } %>
+        <% if (!loggedin) { %>
+        <a href="/">Sign in to register</a>
+        <% } %>
+
+        <% if (registered) { %>
+        <span>Already registered</span>
+        <% } %>
+    </div>
     <div class="course_block">
         <div class="text_center">
             <h2><%= course_title %></h2>
@@ -59,6 +71,13 @@
         </div>
 
     </div>
+
+    <script id="data"
+            type="application/json">
+        { 
+          "course_id": <%= course_id %>
+        }
+       </script>
 </body>
 
 </html>

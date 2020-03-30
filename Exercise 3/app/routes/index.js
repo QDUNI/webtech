@@ -88,7 +88,10 @@ router.get("/course/:course_id?", function (req, res, next) {
                         course_title: respons.title,
                         semester: "This course takes place in " + semesterstring(respons.semester) + ".",
                         level: "The level of this course is " + levelcourse(respons.ac_level) + ".",
-                        src: respons2.src_img
+                        src: respons2.src_img,
+                        loggedin: req.session.loggedin,
+                        course_id: respons.course_id,
+                        registered: false
                     });
                 }
             });
@@ -189,6 +192,11 @@ router.post("/signup", function (req, res) {
         }
     });
 
+});
+
+router.get("/registercourse/:course_id", function (req, res, next) {
+    // TODO
+    res.send("Succesfully registered!");
 });
 
 
