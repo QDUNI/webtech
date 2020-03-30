@@ -7,7 +7,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const filters = document.getElementsByClassName("filter");
 
     searchButton.onclick = () => {
-        window.location.href = "/search?value=" + searchInput.value;
+        updateData();
     };
 
     const filterToggle = function (element) {
@@ -45,6 +45,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     updateData();
+
     function updateData() {
         const selectedFilters = document.getElementsByClassName("filter--toggled");
 
@@ -90,75 +91,123 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         }
 
-        var data = document.getElementById('courses__data').textContent.trim();
-        var courses = JSON.parse(data);
+        // AJAX request
+        loadUrl("/searchdata?value=" + searchInput.value, (xhttp) => {
+            const data = xhttp.response;
 
 
+            var courses = JSON.parse(data);
 
-        const searchResults = document.getElementById("search__results");
-        searchResults.innerHTML = "";
+            const searchResults = document.getElementById("search__results");
+            searchResults.innerHTML = "";
 
-        let count = 0;
-        for (let i = 0; i < courses.length; i++)
-        {
-            const course = JSON.parse(courses[i]);
-            if (!program.includes(course.program))
+            let countTenCourses = 0;
+            let countSets = 0;
+            let count = 0;
+            for (let i = 0; i < courses.length; i++)
             {
-                console.log(course.course_id, course.program, course.ac_level, course.semester);
-                continue;
+                const course = JSON.parse(courses[i]);
+                if (!program.includes(course.program))
+                {
+                    console.log(course.course_id, course.program, course.ac_level, course.semester);
+                    continue;
+                }
+                if (!academicLevels.includes(course.ac_level))
+                {
+                    console.log(course.course_id);
+                    continue;
+                }
+                if (!semester.includes(course.semester))
+                {
+                    console.log(course.course_id);
+                    continue;
+                }
+
+
+                const coursePanel = document.createElement("div");
+                coursePanel.setAttribute("class", "course__panel");
+                coursePanel.onclick = () => {
+                    window.location.href = "/course?course_id=" + course.course_id;
+                };
+
+                const coursePanelImg = document.createElement("img");
+                var src = "";
+                switch (course.program)
+                {
+                    case "Computer Science":
+                        src = "computer.svg";
+                        break;
+                    case "Information Science":
+                        src = "information.svg";
+                        break;
+                    case "Mathematics":
+                        src = "formula.svg";
+                        break;
+                    default: break;
+                }
+                coursePanelImg.setAttribute("src", "/images/" + src);
+                const coursePanelDiv = document.createElement("div");
+                coursePanel.appendChild(coursePanelImg);
+                const coursePanelTitle = document.createElement("h2");
+                coursePanelTitle.innerHTML = course.title;
+                const coursePanelProgram = document.createElement("span");
+                coursePanelProgram.innerHTML = course.program + "<br><br>";
+                const coursePanelDescription = document.createElement("div");
+                coursePanelDescription.innerHTML = course.description;
+                coursePanelDiv.appendChild(coursePanelTitle);
+                coursePanelDiv.appendChild(coursePanelProgram);
+                coursePanelDiv.appendChild(coursePanelDescription);
+                coursePanel.appendChild(coursePanelDiv);
+
+
+                if (countTenCourses >= 10)
+                {
+                    if (countTenCourses % 10 == 0)
+                    {
+                        countSets++;
+                        const viewMoreButton = document.createElement("button");
+                        if (countSets != 1)
+                        {
+                            viewMoreButton.setAttribute("class", "panel__hidden--" + (countSets - 1));
+                            viewMoreButton.setAttribute("style", "display: none");
+                        }
+                        viewMoreButton.innerHTML = "VIEW MORE";
+                        const set = countSets;
+                        viewMoreButton.onclick = () => {
+                            console.log("test", set);
+                            const hiddenPanels = document.getElementsByClassName("panel__hidden--" + set);
+                            for (let i = 0; i < hiddenPanels.length; i++)
+                            {
+                                hiddenPanels[i].setAttribute("style", "display: block");
+                            }
+                            viewMoreButton.setAttribute("style", "display: none");
+                        };
+
+                        searchResults.appendChild(viewMoreButton);
+                    }
+                    coursePanel.setAttribute("style", "display: none");
+                    coursePanel.setAttribute("class", "course__panel panel__hidden--" + countSets);
+                }
+                searchResults.appendChild(coursePanel);
+                countTenCourses++;
+
+                count++;
             }
-            if (!academicLevels.includes(course.ac_level))
+
+            searchInfo.innerHTML = "We found " + count + " courses";
+        });
+    }
+
+
+    function loadUrl(url, cFunction) {
+        var xhttp = new XMLHttpRequest();
+        xhttp.onreadystatechange = function () {
+            if (this.readyState == 4 && this.status == 200)
             {
-                console.log(course.course_id);
-                continue;
+                cFunction(this);
             }
-            if (!semester.includes(course.semester))
-            {
-                console.log(course.course_id);
-                continue;
-            }
-
-
-            const coursePanel = document.createElement("div");
-            coursePanel.setAttribute("class", "course__panel");
-            coursePanel.onclick = () => {
-                window.location.href = "/course?course_id=" + course.course_id;
-            };
-
-            const coursePanelImg = document.createElement("img");
-            var src = "";
-            switch (course.program)
-            {
-                case "Computer Science":
-                    src = "computer.svg";
-                    break;
-                case "Information Science":
-                    src = "information.svg";
-                    break;
-                case "Mathematics":
-                    src = "formula.svg";
-                    break;
-                default: break;
-            }
-            coursePanelImg.setAttribute("src", "/images/" + src);
-            const coursePanelDiv = document.createElement("div");
-            coursePanel.appendChild(coursePanelImg);
-            const coursePanelTitle = document.createElement("h2");
-            coursePanelTitle.innerHTML = course.title;
-            const coursePanelProgram = document.createElement("span");
-            coursePanelProgram.innerHTML = course.program + "<br><br>";
-            const coursePanelDescription = document.createElement("div");
-            coursePanelDescription.innerHTML = course.description;
-            coursePanelDiv.appendChild(coursePanelTitle);
-            coursePanelDiv.appendChild(coursePanelProgram);
-            coursePanelDiv.appendChild(coursePanelDescription);
-            coursePanel.appendChild(coursePanelDiv);
-
-            searchResults.appendChild(coursePanel);
-
-            count++;
-        }
-
-        searchInfo.innerHTML = "We found " + count + " courses";
+        };
+        xhttp.open("GET", url);
+        xhttp.send();
     }
 });
