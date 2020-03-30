@@ -81,30 +81,35 @@ router.get("/course/:course_id?", function (req, res, next) {
                 {
                     const sql3 = "SELECT course_id FROM RegisteredCourses WHERE student_nr = ?";
                     var registered = false;
-                    db.each(sql3, [respons.userid], (err3, response3) => {
+
+                    db.all(sql3, req.session.userid, (err3, response3) => {
                         if (err3)
                         {
+                            console.log("err3 -> error");
                             return console.error(err3.message);
                         }
 
-                        // Dit wordt nooit uitgevoerd! Maar ik kan ook geen error vinden
-                        if (response3 == parseInt(req.param("course_id"))) registered = true;
+                        for (let i = 0; i < response3.length; i++)
+                        {
+                            console.log(response3[i]);
+                            if (response3[i].course_id == parseInt(req.param("course_id"))) registered = true;
 
-                    });
-                    console.log(registered);
+                        }
+                        console.log(registered);
 
-                    res.render("pages/course", {
-                        title: "course",
-                        teacher: (respons2.firstname + " " + respons2.lastname),
-                        description: respons.description,
-                        study_program: respons.program,
-                        course_title: respons.title,
-                        semester: "This course takes place in " + semesterstring(respons.semester) + ".",
-                        level: "The level of this course is " + levelcourse(respons.ac_level) + ".",
-                        src: respons2.src_img,
-                        loggedin: req.session.loggedin,
-                        course_id: respons.course_id,
-                        registered: registered
+                        res.render("pages/course", {
+                            title: "course",
+                            teacher: (respons2.firstname + " " + respons2.lastname),
+                            description: respons.description,
+                            study_program: respons.program,
+                            course_title: respons.title,
+                            semester: "This course takes place in " + semesterstring(respons.semester) + ".",
+                            level: "The level of this course is " + levelcourse(respons.ac_level) + ".",
+                            src: respons2.src_img,
+                            loggedin: req.session.loggedin,
+                            course_id: respons.course_id,
+                            registered: registered
+                        });
                     });
                 }
             });
