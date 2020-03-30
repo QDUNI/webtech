@@ -87,7 +87,8 @@ router.get("/course/:course_id?", function (req, res, next) {
                         study_program: respons.program,
                         course_title: respons.title,
                         semester: "This course takes place in " + semesterstring(respons.semester) + ".",
-                        level: "The level of this course is " + levelcourse(respons.ac_level) + "."
+                        level: "The level of this course is " + levelcourse(respons.ac_level) + ".",
+                        src: respons2.src_img
                     });
                 }
             });
