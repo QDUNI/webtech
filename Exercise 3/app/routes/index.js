@@ -195,7 +195,8 @@ router.post("/signup", function (req, res) {
 });
 
 router.get("/registercourse/:course_id", function (req, res, next) {
-    // TODO
+    // const sql = "INSERT INTO RegisteredCourses (student_id, course_id) VALUES (?, ?)";
+    //db.run(sql, [req.session.user_id, req.param("course_id")]);
     res.send("Succesfully registered!");
 });
 
