@@ -72,7 +72,6 @@ router.get("/course/:course_id?", function (req, res, next) {
             return console.error(err.message);
         } else
         {
-            console.log(respons.teacher_id);
             const sql2 = "SELECT * FROM Teachers WHERE teacher_id = ?";
             db.get(sql2, respons.teacher_id, (err2, respons2) => {
                 if (err2)
@@ -80,6 +79,20 @@ router.get("/course/:course_id?", function (req, res, next) {
                     return console.error(err2.message);
                 } else
                 {
+                    const sql3 = "SELECT course_id FROM RegisteredCourses WHERE student_nr = ?";
+                    var registered = false;
+                    db.each(sql3, [respons.userid], (err3, response3) => {
+                        if (err3)
+                        {
+                            return console.error(err3.message);
+                        }
+
+                        // Dit wordt nooit uitgevoerd! Maar ik kan ook geen error vinden
+                        if (response3 == parseInt(req.param("course_id"))) registered = true;
+
+                    });
+                    console.log(registered);
+
                     res.render("pages/course", {
                         title: "course",
                         teacher: (respons2.firstname + " " + respons2.lastname),
@@ -91,7 +104,7 @@ router.get("/course/:course_id?", function (req, res, next) {
                         src: respons2.src_img,
                         loggedin: req.session.loggedin,
                         course_id: respons.course_id,
-                        registered: false
+                        registered: registered
                     });
                 }
             });
@@ -195,9 +208,22 @@ router.post("/signup", function (req, res) {
 });
 
 router.get("/registercourse/:course_id", function (req, res, next) {
-    // const sql = "INSERT INTO RegisteredCourses (student_id, course_id) VALUES (?, ?)";
-    //db.run(sql, [req.session.user_id, req.param("course_id")]);
-    res.send("Succesfully registered!");
+    if (!req.session.loggedin) res.send("Please log in...");
+    else
+    {
+        console.log(req.session.userid);
+        const sql = "INSERT INTO RegisteredCourses (student_nr, course_id) VALUES (?, ?)";
+        db.run(sql, [req.session.userid, req.param("course_id")], function (err) {
+            if (err)
+            {
+                res.send("error");
+                return console.log(err.message);
+            } else
+            {
+                res.send("Succesfully registered!");
+            }
+        });
+    }
 });
 
 
