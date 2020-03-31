@@ -216,7 +216,6 @@ router.get("/registercourse/:course_id", function (req, res, next) {
     if (!req.session.loggedin) res.send("Please log in...");
     else
     {
-        console.log(req.session.userid);
         const sql = "INSERT INTO RegisteredCourses (student_nr, course_id) VALUES (?, ?)";
         db.run(sql, [req.session.userid, req.param("course_id")], function (err) {
             if (err)
@@ -226,6 +225,24 @@ router.get("/registercourse/:course_id", function (req, res, next) {
             } else
             {
                 res.send("Succesfully registered!");
+            }
+        });
+    }
+});
+
+router.get("/unregistercourse/:course_id", function (req, res, next) {
+    if (!req.session.loggedin) res.send("Please log in...");
+    else
+    {
+        const sql = "DELETE FROM RegisteredCourses WHERE student_nr = ? AND course_id = ?";
+        db.run(sql, [req.session.userid, req.param("course_id")], function (err) {
+            if (err)
+            {
+                res.send("error");
+                return console.log(err.message);
+            } else
+            {
+                res.send("Succesfully unregistered!");
             }
         });
     }
