@@ -311,6 +311,38 @@ h2 {
     width: 65%;
 }
 
+@media only screen and (max-width: 650px) {
+    #search__wrapper {
+        flex-wrap: wrap;
+    }
+
+    #search__filters {
+        width: 100%;
+    }
+
+    #search__main {
+        width: 100%;
+    }
+
+    .search__panel--top {
+        padding-right: 0;
+
+    }
+
+    .search__panel--top>h2 {
+        text-align: center !important;
+        width: 100%;
+    }
+
+    .search__panel--bottom {
+        border: none !important;
+    }
+
+    #search__results {
+        width: 100% !important;
+    }
+}
+
 .group {
     border-bottom: 1px solid rgb(216, 216, 216);
     display: flex;
@@ -707,9 +739,9 @@ footer {
 }
 
 .course__panel>img {
-    margin-left: 25px;
-    margin-top: 40px;
-    height: 150px;
+    margin-left: 7.5%;
+    margin-top: 45px;
+    width: 15%;
 }
 
 .course__panel>div {
