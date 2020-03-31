@@ -552,11 +552,12 @@ h2 {
 
     #search {
         margin: 0;
-        width: 60%;
+        width: 50%;
     }
 
     .search__btn {
-        padding: 14px 20px;
+        width: 30%;
+        height: 40px;
     }
 
     #banner {
