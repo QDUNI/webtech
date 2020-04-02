@@ -19,6 +19,9 @@ document.addEventListener("DOMContentLoaded", () => {
         const profileButton = document.createElement("div");
         profileButton.setAttribute("id", "profile__btn");
         const profileButtonImg = document.createElement("img");
+        profileButtonImg.onclick = () => {
+            window.location.href = "/profile";
+        };
         profileButtonImg.setAttribute("id", "profile__img");
         profileButtonImg.setAttribute("src", "/images/user.svg");
         profileButton.appendChild(profileButtonImg);
