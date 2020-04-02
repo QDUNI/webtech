@@ -50,6 +50,18 @@ h2 {
     color: white;
 }
 
+.nav__color--white #menu__icon {
+    filter: invert();
+}
+
+.nav__color--black #menu__icon {
+    filter: invert(0) !important;
+}
+
+.nav__color--black #profile__img {
+    filter: invert(0) !important;
+}
+
 .nav__color--black a {
     color: black;
 }
@@ -109,8 +121,9 @@ h2 {
 }
 
 #menu__icon {
-    width: 50px;
-    margin-top: 8px;
+    width: 30px;
+    margin-top: 17px;
+    filter: invert(0);
 }
 
 .nav__logo {
@@ -1079,6 +1092,10 @@ input {
 #profile__btn {
     padding: 12px 35px;
     vertical-align: middle;
+    position: fixed;
+    top: 18px;
+    right: 0;
+    z-index: 400;
 }
 
 #profile__btn>img {
@@ -1090,4 +1107,15 @@ input {
 
 #profile__btn>img:hover {
     cursor: pointer;
+}
+
+@media only screen and (max-width: 650px) {
+    #profile__btn {
+        position: fixed;
+        right: 40px;
+        top: 15px;
+    }
+
+    #profile__btn>img {}
+
 }

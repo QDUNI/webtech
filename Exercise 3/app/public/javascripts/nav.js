@@ -18,11 +18,16 @@ document.addEventListener("DOMContentLoaded", () => {
     if (data.loggedin)
     {
         const signinButton = document.getElementById("signin_btn");
-        const profileButton = document.createElement("li");
+        const signinButtonMob = document.getElementById("signin_btn--mob");
+        const profileButton = document.createElement("div");
         profileButton.setAttribute("id", "profile__btn");
         const profileButtonImg = document.createElement("img");
+        profileButtonImg.setAttribute("id", "profile__img");
         profileButtonImg.setAttribute("src", "/images/user.svg");
         profileButton.appendChild(profileButtonImg);
-        signinButton.replaceWith(profileButton);
+        document.getElementsByClassName("nav__wrapper")[0].appendChild(profileButton);
+        signinButton.replaceWith(document.createElement("li"));
+
+        signinButtonMob.remove();
     }
 });
