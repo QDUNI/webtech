@@ -28,12 +28,12 @@ router.use(session({
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
-    res.render('pages/index', { title: 'Express' });
+    res.render('pages/index', { title: 'Express', loggedin: req.session.loggedin });
     console.log(req.session.userid);
 });
 
 router.get("/search/:value?", function (req, res, next) {
-    res.render("pages/search", { title: "Search courses", value: req.param("value") });
+    res.render("pages/search", { title: "Search courses", value: req.param("value"), loggedin: req.session.loggedin });
 });
 
 router.get("/searchdata/:value?", function (req, res, next) {
@@ -57,11 +57,11 @@ router.get("/searchdata/:value?", function (req, res, next) {
 
 
 router.get("/signin", function (req, res, next) {
-    res.render("pages/signin", { title: "Sign in UU" });
+    res.render("pages/signin", { title: "Sign in UU", loggedin: req.session.loggedin });
 });
 
 router.get("/signup", function (req, res, next) {
-    res.render("pages/signup", { title: "Sign up UU", error: "" });
+    res.render("pages/signup", { title: "Sign up UU", error: "", loggedin: req.session.loggedin });
 });
 
 router.get("/course/:course_id?", function (req, res, next) {

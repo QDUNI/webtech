@@ -54,6 +54,10 @@ h2 {
     color: black;
 }
 
+.nav__color--black #profile__btn>img {
+    filter: none;
+}
+
 .nav__color--black .nav__wrapper {
     background-color: white;
     border-bottom: 1px solid #efb501;
@@ -1070,4 +1074,20 @@ input {
     border-bottom: 1px solid #555555;
     height: 45px;
     background-color: antiquewhite;
+}
+
+#profile__btn {
+    padding: 12px 35px;
+    vertical-align: middle;
+}
+
+#profile__btn>img {
+    width: 26px;
+    filter: invert(1);
+    position: relative;
+    left: 0;
+}
+
+#profile__btn>img:hover {
+    cursor: pointer;
 }
