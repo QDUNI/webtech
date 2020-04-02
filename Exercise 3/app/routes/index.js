@@ -40,19 +40,38 @@ router.get('/profile', function (req, res, next) {
             return console.error(err.message);
         } else
         {
-            if (req.session.loggedin)
-                res.render('pages/profile', {
-                    loggedin: req.session.loggedin,
-                    student_nr: respons.student_nr,
-                    firstname: respons.firstname,
-                    lastname: respons.lastname,
-                    program: respons.program,
-                    acd_level: respons.acd_level
-                });
-            else
-            {
-                res.send("Please login...");
-            }
+            const sql2 = "SELECT * FROM RegisteredCourses WHERE student_nr = ?";
+            db.all(sql2, req.session.userid, (err2, rows) => {
+                if (err2)
+                {
+                    return console.error(err2.message);
+                } else 
+                {
+                    if (req.session.loggedin)
+                    {
+                        var courses = [];
+                        for (let i = 0; i < rows.length; i++)
+                        {
+                            courses.push(JSON.stringify(rows[i]));
+                        }
+
+
+                        res.render('pages/profile', {
+                            loggedin: req.session.loggedin,
+                            student_nr: respons.student_nr,
+                            firstname: respons.firstname,
+                            lastname: respons.lastname,
+                            program: respons.sprogramm,
+                            acd_level: respons.acd_level,
+                            courses: courses
+                        });
+                    }
+                    else
+                    {
+                        res.redirect("/signin");
+                    }
+                }
+            });
         }
     });
 });
