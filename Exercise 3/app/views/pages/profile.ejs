@@ -3,7 +3,7 @@
 
 <head>
     <% include ../partials/head %>
-    <script src="/javascripts/index.js"></script>
+        <script src="/javascripts/index.js"></script>
 </head>
 
 <body id="profilepage">
@@ -11,11 +11,10 @@
         <% include ../partials/navbar %>
     </nav>
     <div class="Profile__wrap">
-        <img class="Profile__picture"
-             src="/images/user.png">
-        <span id="name"> Quinn Donkers </span>
-        <span id="studentnr"> 6947859 </span>
-        <span id="programlevel"> Bachelor - Informatica</span>
+        <img class="Profile__picture" src="/images/user.png">
+        <span id="name">  <%= firstname %>  <%= lastname %> </span>
+        <span id="studentnr">   <%= student_nr %> </span>
+        <span id="programlevel"> <%= acd_level %> - <%= program %></span>
     </div>
     </div>
     <div class="Profile__edit__wrap">
@@ -30,18 +29,12 @@
 
     </div>
 
-    <!-- DATA -->
-    <%= student_nr %>
-    <%= firstname %>
-    <%= lastname %>
-    <%= program %>
-    <%= acd_level %>
+
 
     <% include ../partials/footer %>
 </body>
 
-<script id="data"
-        type="application/json">
+<script id="data" type="application/json">
     {
         "loggedin": <%= loggedin %>
     }

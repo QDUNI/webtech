@@ -1093,18 +1093,9 @@ input {
     cursor: pointer;
 }
 
-@media only screen and (max-width: 650px) {
-    #profile__btn {
-        position: fixed;
-        right: 40px;
-        top: 15px;
-    }
-    #profile__btn>img {}
-}
-
 .Profile__wrap {
     width: 90%;
-    height: 300px;
+    height: 40%;
     background-color: #fff;
     margin: auto;
     display: block;
@@ -1119,6 +1110,10 @@ input {
 .Profile__wrap span {
     display: block;
     font-size: 20px;
+}
+
+#programlevel {
+    padding-bottom: 20px;
 }
 
 .Profile__picture {
@@ -1148,10 +1143,10 @@ input {
     background-color: #fff;
     margin: auto;
     display: block;
-    margin-top: 70px;
+    margin-top: 50px;
     color: black;
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: 50px;
 }
 
 .RegisteredCourses__wrap span {
@@ -1162,4 +1157,22 @@ input {
 
 #profilepage {
     background-color: #efb501;
+}
+
+@media only screen and (max-width: 1080px) {
+    .Profile__picture {
+        width: 18%;
+    }
+}
+
+@media only screen and (max-width: 650px) {
+    #profile__btn {
+        position: fixed;
+        right: 40px;
+        top: 15px;
+    }
+    #profile__btn>img {}
+    .Profile__picture {
+        width: 30%;
+    }
 }
