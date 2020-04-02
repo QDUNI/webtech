@@ -182,11 +182,9 @@ h2 {
     .navmob {
         display: block;
     }
-
     .nav__expand {
         display: none;
     }
-
     #signin_btn {
         max-width: 40vw;
         margin-left: auto;
@@ -332,29 +330,22 @@ h2 {
     #search__wrapper {
         flex-wrap: wrap;
     }
-
     #search__filters {
         width: 100%;
     }
-
     #search__main {
         width: 100%;
     }
-
     .search__panel--top {
         padding-right: 0;
-
     }
-
     .search__panel--top>h2 {
         text-align: center !important;
         width: 100%;
     }
-
     .search__panel--bottom {
         border: none !important;
     }
-
     #search__results {
         width: 100% !important;
     }
@@ -562,21 +553,20 @@ h2 {
         text-align: center;
         font-size: 10px;
     }
-
     .header__homepage__content h1 {
-        font-size: 24px;
+        font-size: 40px;
+        margin: 0px;
     }
-
     #search {
         margin: 0;
         width: 50%;
+        margin-top: 20px;
     }
-
     .search__btn {
         width: 30%;
         height: 40px;
+        margin-top: 20px;
     }
-
     #banner {
         height: 40vh;
         width: 100vw;
@@ -585,7 +575,6 @@ h2 {
         background-repeat: no-repeat;
         background-position: 50% 50%;
     }
-
     #banner_img {
         display: none;
     }
@@ -662,21 +651,17 @@ h2 {
         padding-right: 80px;
         margin: auto;
     }
-
     #mainpage__uu {
         flex-wrap: wrap;
     }
-
     #mainpage__uu>div {
         width: 80%;
         text-align: center;
         margin-right: auto;
     }
-
     #mainpage__uu>img {
         margin-top: 30px;
     }
-
     #mainpage__uu a {
         margin-left: auto;
         margin-right: auto;
@@ -1115,7 +1100,67 @@ input {
         right: 40px;
         top: 15px;
     }
-
     #profile__btn>img {}
+}
 
+.Profile__wrap {
+    width: 90%;
+    height: 300px;
+    background-color: #fff;
+    margin: auto;
+    display: block;
+    margin-top: 120px;
+    background-image: url("../images/backgroundprofile.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    color: #fff;
+    text-align: center;
+}
+
+.Profile__wrap span {
+    display: block;
+    font-size: 20px;
+}
+
+.Profile__picture {
+    margin: auto;
+    display: block;
+    width: 10%;
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.Profile__edit__wrap {
+    width: 90%;
+    display: block;
+    margin: auto;
+    background-color: #ffF;
+    height: 50px;
+    text-align: center;
+    color: #efb501;
+    font-size: 20px;
+    line-height: 50px;
+}
+
+.RegisteredCourses__wrap {
+    width: 90%;
+    height: 300px;
+    background-color: #fff;
+    margin: auto;
+    display: block;
+    margin-top: 70px;
+    color: black;
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.RegisteredCourses__wrap span {
+    display: block;
+    padding: 20px;
+    font-size: 20px;
+}
+
+#profilepage {
+    background-color: #efb501;
 }

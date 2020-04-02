@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../partials/head %>
+        <script src="/javascripts/index.js"></script>
+</head>
+
+<body id="profilepage">
+    <nav class="nav__color--black">
+        <% include ../partials/navbar %>
+    </nav>
+    <div class="Profile__wrap">
+        <img class="Profile__picture" src="/images/user.png">
+        <span id="name"> Quinn Donkers </span>
+        <span id="studentnr"> 6947859 </span>
+        <span id="programlevel"> Bachelor - Informatica</span>
+    </div>
+    </div>
+    <div class="Profile__edit__wrap">
+        <span id="editprofile"> Edit Profile </span>
+    </div>
+    <div class="RegisteredCourses__wrap">
+        <span>Registered Courses</span>
+        <div class=RegisteredCourses__list>
+
+        </div>
+
+
+    </div>
+
+
+    <% include ../partials/footer %>
+</body>
+
+<script id="data" type="application/json">
+    {
+        "loggedin": <%= loggedin %>
+    }
+</script>
+
+</html>
