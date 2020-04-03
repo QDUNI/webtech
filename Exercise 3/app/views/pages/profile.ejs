@@ -3,47 +3,54 @@
 
 <head>
     <% include ../partials/head %>
-        <script src="/javascripts/index.js"></script>
+
 </head>
 
-<body id="profilepage">
-    <nav class="nav__color--black">
-        <% include ../partials/navbar %>
-    </nav>
-    <div class="Profile__wrap">
-        <img class="Profile__picture" src="/images/user.png">
-        <span id="name">  <%= firstname %>  <%= lastname %> </span>
-        <span id="studentnr">   <%= student_nr %> </span>
-        <span id="programlevel"> <%= acd_level %> - <%= program %></span>
-    </div>
-    </div>
-    <div class="Profile__edit__wrap">
-        <span id="editprofile"> Edit Profile </span>
-    </div>
-    <div class="RegisteredCourses__wrap">
-        <span>Registered Courses</span>
-        <div class=RegisteredCourses__list>
-
+<body>
+    <div id="profilepage">
+        <nav class="nav__color--black">
+            <% include ../partials/navbar %>
+        </nav>
+        <div class="Profile__wrap">
+            <div class="Profile__content">
+                <img class="Profile__picture" src="/images/user.png">
+                <span id="name">  <%= firstname %>  <%= lastname %> </span>
+                <span id="studentnr">   <%= student_nr %> </span>
+                <span id="programlevel"> <%= acd_level %> - <%= program %></span>
+            </div>
         </div>
 
+        <div class="Profile__edit__wrap">
+            <span id="editprofile"> Edit Profile </span>
+        </div>
 
+        <div class="RegisteredCourses__wrap">
+            <div class="RegisteredCourses__content">
+                <span>Registered Courses</span>
+                <div class=RegisteredCourses__list>
+
+                </div>
+            </div>
+
+
+
+        </div>
     </div>
 
-
-
-    <script id="data"
-            type="application/json">
-{
-    "courses": <%= courses %>
-}
-</script>
 
     <% include ../partials/footer %>
 </body>
 
 <script id="data" type="application/json">
     {
+
         "loggedin": <%= loggedin %>
+    }
+</script>
+
+<script id="datacourse" type="application/json">
+    {
+        "courses": <%= courses %>
     }
 </script>
 

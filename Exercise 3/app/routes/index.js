@@ -55,7 +55,7 @@ router.get('/profile', function(req, res, next) {
                             student_nr: respons.student_nr,
                             firstname: respons.firstname,
                             lastname: respons.lastname,
-                            program: respons.sprogramm,
+                            program: respons.programm,
                             acd_level: respons.acd_level,
                             courses: courses
                         });
