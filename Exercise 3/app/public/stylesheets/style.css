@@ -540,6 +540,22 @@ h2 {
     outline: none;
 }
 
+#showallcourses a {
+    margin-top: 10px;
+    color: #efb501;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+
+#showallcourses a:hover {
+    margin-top: 10px;
+    color: #Fff;
+    text-decoration: none;
+    font-size: 20px;
+    display: block;
+}
+
 @media only screen and (max-width: 650px) {
     .header__homepage__content {
         box-sizing: border-box;
@@ -1163,6 +1179,134 @@ input {
 
 #profilepage {
     background: #efb501;
+}
+
+#course__article {
+    margin-top: 50px;
+    text-align: center;
+}
+
+#info__header {
+    background-color: #efb501;
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: calc(50px + 5vh);
+    padding: 2vh;
+    font-size: 3vh;
+}
+
+#info__header>div {
+    font-size: 2vh;
+    color: rgb(63, 63, 63);
+}
+
+#infoEntries__wrapper {
+    margin-left: 10vw;
+    text-align: left;
+    background-color: #3d3d3d;
+    margin-bottom: 10vh;
+    margin-right: 10vw;
+    color: white;
+    padding-top: 2%;
+    ;
+}
+
+.infoEntry {
+    display: flex;
+    height: 5vh;
+    margin-left: 10%;
+    width: -webkit-fill-available;
+}
+
+.infoEntry a {
+    text-decoration: none;
+    color: rgb(48, 48, 48);
+    padding: 8px;
+    background-color: #efb501;
+    width: 100px;
+    min-width: 100px;
+    border-radius: 4vh;
+    font-size: 2vh;
+    height: 20px;
+}
+
+.infoEntry a:hover {
+    background-color: grey;
+    color: white;
+}
+
+.infoEntry__title {
+    width: 30%;
+    color: #efb501;
+    margin-right: 10%;
+}
+
+.infoEntry__info {
+    width: 70%;
+    margin-right: 5%;
+}
+
+.description {
+    height: auto;
+    margin-bottom: 20px;
+}
+
+#teacherimg {
+    display: block;
+    margin: auto;
+    margin-top: 30px;
+    margin-bottom: 30px;
+    border-radius: 20px;
+    height: 200px;
+}
+
+#info__box {
+    width: 100%;
+    margin-top: 50px;
+    text-align: center;
+    background-color: black;
+    color: white;
+    padding: 20px;
+    box-sizing: border-box;
+}
+
+#info__box a {
+    color: white;
+    text-decoration: none;
+}
+
+#unregister__btn {
+    outline: none;
+    border: none;
+    font-size: 20px;
+    background-color: red;
+    color: white;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#register__btn {
+    outline: none;
+    border: none;
+    font-size: 20px;
+    background-color: #efb501;
+    color: white;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+    padding: 5px;
+    border-radius: 20px;
+    cursor: pointer;
+}
+
+#coursebody {
+    background-color: #fff;
+    top: 0;
+    display: flex;
 }
 
 @media only screen and (max-width: 1080px) {

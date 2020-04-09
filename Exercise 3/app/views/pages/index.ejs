@@ -3,7 +3,7 @@
 
 <head>
     <% include ../partials/head %>
-    <script src="/javascripts/index.js"></script>
+        <script src="/javascripts/index.js"></script>
 </head>
 
 <body>
@@ -15,54 +15,38 @@
         <div class="header__homepage__content">
             <h1>'STOP DREAMING</h1>
             <h1> START LEARNING'</h1>
-            <input type="text"
-                   id="search"
-                   name="search"
-                   placeholder="What do you wanna learn?"></input>
+            <input type="text" id="search" name="search" placeholder="What do you wanna learn?"></input>
             <button id="search__btn">SEARCH</button>
+            <span id="showallcourses"><a href="/search?value=">See all course</a></span>
         </div>
         <div id="banner">
-            <img id="banner_img"
-                 src="/images/banner.png "
-                 alt="banner " />
+            <img id="banner_img" src="/images/banner.png " alt="banner " />
         </div>
     </header>
     <div class="mainpage">
 
         <h2>Learn everything you ever wanted to learn</h2>
-        <p id="mainpage__text"
-           class="mainpage__panel"> UU Courses gives you the oppurtunity to
-            browse
-            every course available on the university of Utrecht. You can search,
-            filter and register for courses if you are a student. UU Courses is
-            a students project and we like you to test it out. </p>
+        <p id="mainpage__text" class="mainpage__panel"> UU Courses gives you the oppurtunity to browse every course available on the university of Utrecht. You can search, filter and register for courses if you are a student. UU Courses is a students project and we like you to test it out. </p>
 
-        <div id="mainpage__uu"
-             class="mainpage__panel">
+        <div id="mainpage__uu" class="mainpage__panel">
             <div>
                 <h1>Get to know the University</h1>
-                Utrecht University stands for broad and interdisciplinary
-                education.
-                Students at Utrecht University learn to look beyond the
-                boundaries
-                of their fields of study and work together in interdisciplinary
-                projects.<br><br>
+                Utrecht University stands for broad and interdisciplinary education. Students at Utrecht University learn to look beyond the boundaries of their fields of study and work together in interdisciplinary projects.
+                <br><br>
 
                 <a href="https://www.uu.nl/">See more info</a>
             </div>
-            <img src="/images/uu_flag.png"
-                 alt="University Utrecht flag" />
+            <img src="/images/uu_flag.png" alt="University Utrecht flag" />
         </div>
     </div>
 
     <% include ../partials/footer %>
 </body>
 
-<script id="data"
-        type="application/json">
-{
-    "loggedin": <%= loggedin %>
-}
+<script id="data" type="application/json">
+    {
+        "loggedin": <%= loggedin %>
+    }
 </script>
 
 </html>

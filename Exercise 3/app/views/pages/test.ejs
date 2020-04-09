@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<Html>
+
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body>
+    <nav class="nav__color--black">
+        <% include ../partials/navbar %>
+    </nav>
+
+    <article id="course__article">
+        <div id="info__header">
+            <%= course_title %>
+                <div>Department of
+                    <%= study_program %>
+                </div>
+        </div>
+        <div id="infoEntries__wrapper">
+
+            <img class="portrait" src="/images/teachers/<%= src %>.jpg" alt="proffessor">
+            <span>~<%= teacher %></span>
+
+            <div class="infoEntry">
+                <div class="infoEntry__title">Description</div>
+                <div class="infoEntry__info">
+                    <%= description %>
+                </div>
+            </div>
+            <div class="infoEntry">
+                <div class="infoEntry__title">Study credits</div>
+                <div class="infoEntry__info">7.5 ECTS</div>
+            </div>
+            <div class="infoEntry">
+                <div class="infoEntry__title">semester</div>
+                <div class="infoEntry__info">
+                    <%= semester %>
+                </div>
+            </div>
+            <div class="infoEntry">
+                <div class="infoEntry__title"> Acedemic Level</div>
+                <div class="infoEntry__info">
+                    <%= level %>
+                </div>
+            </div>
+            <div class="infoEntry">
+                <div class="infoEntry__title">Number of participants</div>
+                <div class="infoEntry__info">200+</div>
+            </div>
+
+        </div>
+    </article>
+
+
+</body>
+
+</Html>

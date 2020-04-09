@@ -1,83 +1,92 @@
 <!DOCTYPE html>
-<html>
+<Html>
 
 <head>
-    <meta name="viewport"
-          content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet"
-          type="text/css"
-          href="/stylesheets/stylesheet.css">
-    <script src="/javascripts/course.js"></script>
+    <% include ../partials/head %>
+        <script src="/javascripts/course.js"></script>
 </head>
 
 <body>
-    <div id="info__box">
-        <% if (loggedin && !registered) { %><button
-                id="register__btn">Register</button><% } %>
-        <% if (!loggedin) { %>
-        <a href="/">Sign in to register</a>
-        <% } %>
-
-        <% if (registered) { %>
-        <button id="unregister__btn">Unregister</button>
-        <% } %>
-    </div>
-    <div class="course_block">
-        <div class="text_center">
-            <h2><%= course_title %></h2>
-            <hr>
-            <h3><%= study_program %></h3>
-        </div>
-
-        <p><%= description %>
-        </p>
-        <div class="course_proffessor">
-
-            <img class="portrait"
-                 src="/images/teachers/<%= src %>.jpg"
-                 alt="proffessor">
-
-            <span>~<%= teacher %></span>
-
-            <div class="course_info">
-                <dt>
-                    Study Program:
-                </dt>
-                <dd>
-                    This course is a part of <%= study_program %>.
-                </dd>
-                <hr>
-                <dt>
-                    Semester:
-                </dt>
-                <dd>
-                    <%= semester %>
-                </dd>
-                <hr>
-                <dt>
-                    Acedemic Level:
-                </dt>
-                <dd>
-                    <%= level %>
-                </dd>
-                <hr>
-                <dt>
-                    Study Points:
-                </dt>
-                <dd class="lowest_dd">
-                    7,5 EC
-                </dd>
+    <nav class="nav__color--black">
+        <% include ../partials/navbar %>
+    </nav>
+    <div id="coursebody">
+        <article id="course__article">
+            <div id="info__header">
+                <%= course_title %>
+                    <div>Department of
+                        <%= study_program %>
+                    </div>
             </div>
-        </div>
+            <div id="infoEntries__wrapper">
 
+                <img class="portrait" id="teacherimg" src="/images/teachers/<%= src %>.jpg" alt="proffessor">
+
+
+                <div class="infoEntry">
+                    <div class="infoEntry__title">Teacher</div>
+                    <div class="infoEntry__info">
+                        <%= teacher %>
+                    </div>
+                </div>
+                <div class="infoEntry description">
+                    <div class="infoEntry__title">Description</div>
+                    <div class="infoEntry__info">
+                        <%= description %>
+                    </div>
+                </div>
+                <div class="infoEntry">
+                    <div class="infoEntry__title">Study credits</div>
+                    <div class="infoEntry__info">7.5 ECTS</div>
+                </div>
+                <div class="infoEntry">
+                    <div class="infoEntry__title">semester</div>
+                    <div class="infoEntry__info">
+                        <%= semester %>
+                    </div>
+                </div>
+                <div class="infoEntry">
+                    <div class="infoEntry__title"> Acedemic Level</div>
+                    <div class="infoEntry__info">
+                        <%= level %>
+                    </div>
+                </div>
+
+                <div id="info__box">
+                    <% if (loggedin && !registered) { %><button id="register__btn">Register</button>
+                        <% } %>
+                            <% if (!loggedin) { %>
+                                <a href="/signin">Sign in to register</a>
+                                <% } %>
+
+                                    <% if (registered) { %>
+                                        <button id="unregister__btn">Unregister</button>
+                                        <% } %>
+                </div>
+
+            </div>
+        </article>
     </div>
 
-    <script id="data"
-            type="application/json">
-        { 
-          "course_id": <%= course_id %>
-        }
-       </script>
+    <% include ../partials/footer %>
+
+
+        <script id="data_course" type="application/json">
+            {
+                "course_id": <%= course_id %>
+
+
+            }
+        </script>
+        <script id="data" type="application/json">
+            {
+
+
+                "loggedin": <%= loggedin %>
+            }
+        </script>
+
+
 </body>
 
-</html>
+</Html>
