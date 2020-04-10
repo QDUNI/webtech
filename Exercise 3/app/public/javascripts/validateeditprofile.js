@@ -7,9 +7,6 @@ function validateEdit() {
     var level = document.getElementsByName("level")[0].value;
     var span = document.getElementById("edit__error");
 
-    console.log(repassword);
-    console.log(password);
-    return false;
 
 
     //check firstname
