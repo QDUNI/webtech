@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
     <% include ../partials/head %>
@@ -9,33 +9,48 @@
     <div class="wrapper">
         <div class="Signin__view">
             <div class="Signin__wrap">
-                <form class="SignIn__form" method="POST" action="/signin">
+                <form class="SignIn__form"
+                      method="POST"
+                      action="/signin">
                     <span class=" Signin__form__title "> Welcome </span>
-                    <img class="logo " src="/images/logo/logo.svg " alt="logo " />
-                    <span id="Signin_error" class="Signin__form__error "></span>
+                    <img class="logo "
+                         src="/images/logo/logo.svg "
+                         alt="logo " />
+                    <span id="Signin_error"
+                          class="Signin__form__error "></span>
 
                     <div class="Signin_input ">
-                        <input class="input" type="text" id="studentid" name="studentid" placeholder="Student ID">
+                        <input class="input"
+                               type="text"
+                               id="studentid"
+                               name="studentid"
+                               placeholder="Student ID">
                     </div>
 
                     <div class="Signin_input ">
-                        <input class="input" type="password" id="password" name="password" placeholder="Password">
+                        <input class="input"
+                               type="password"
+                               id="password"
+                               name="password"
+                               placeholder="Password">
                     </div>
 
                     <div class="Signin__form__btn__wrapper ">
                         <div class="Signin__form__bgbtn "></div>
-                        <button id="signin_btn " class="Signin-form-btn "> Login </button>
+                        <button id="signin_btn "
+                                class="Signin-form-btn "> Login </button>
 
                     </div>
 
                     <div class="SignIn__bottomtext ">
                         <span class="SignIn__bottomtext_txt1 ">
-							Don’t have an account?
-						</span>
+                            Don’t have an account?
+                        </span>
 
-                        <a class="SignIn__bottomtext_txt2 " href="/signup">
-							Sign Up
-						</a>
+                        <a class="SignIn__bottomtext_txt2 "
+                           href="/signup">
+                            Sign Up
+                        </a>
                     </div>
                 </form>
 

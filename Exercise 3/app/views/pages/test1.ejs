@@ -1,23 +1,27 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" type="text/css" href="/stylesheets/stylesheet.css">
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet"
+          type="text/css"
+          href="/stylesheets/stylesheet.css">
     <script src="/javascripts/course.js"></script>
 </head>
 
 <body id="">
     <div id="info__box">
-        <% if (loggedin && !registered) { %><button id="register__btn">Register</button>
-            <% } %>
-                <% if (!loggedin) { %>
-                    <a href="/">Sign in to register</a>
-                    <% } %>
+        <% if (loggedin && !registered) { %><button
+                id="register__btn">Register</button>
+        <% } %>
+        <% if (!loggedin) { %>
+        <a href="/">Sign in to register</a>
+        <% } %>
 
-                        <% if (registered) { %>
-                            <button id="unregister__btn">Unregister</button>
-                            <% } %>
+        <% if (registered) { %>
+        <button id="unregister__btn">Unregister</button>
+        <% } %>
     </div>
     <div class="course_block">
         <div class="text_center">
@@ -35,7 +39,9 @@
         </p>
         <div class="course_proffessor">
 
-            <img class="portrait" src="/images/teachers/<%= src %>.jpg" alt="proffessor">
+            <img class="portrait"
+                 src="/images/teachers/<%= src %>.jpg"
+                 alt="proffessor">
 
             <span>~<%= teacher %></span>
 
@@ -73,7 +79,8 @@
 
     </div>
 
-    <script id="data" type="application/json">
+    <script id="data"
+            type="application/json">
         {
             "course_id": <%= course_id %>
 

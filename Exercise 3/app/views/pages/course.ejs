@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<Html>
+<Html lang="en">
 
 <head>
     <% include ../partials/head %>
-        <script src="/javascripts/course.js"></script>
+    <script src="/javascripts/course.js"></script>
 </head>
 
 <body>
@@ -14,13 +14,16 @@
         <article id="course__article">
             <div id="info__header">
                 <%= course_title %>
-                    <div>Department of
-                        <%= study_program %>
-                    </div>
+                <div>Department of
+                    <%= study_program %>
+                </div>
             </div>
             <div id="infoEntries__wrapper">
 
-                <img class="portrait" id="teacherimg" src="/images/teachers/<%= src %>.jpg" alt="proffessor">
+                <img class="portrait"
+                     id="teacherimg"
+                     src="/images/teachers/<%= src %>.jpg"
+                     alt="proffessor">
 
 
                 <div class="infoEntry">
@@ -53,15 +56,16 @@
                 </div>
 
                 <div id="info__box">
-                    <% if (loggedin && !registered) { %><button id="register__btn">Register</button>
-                        <% } %>
-                            <% if (!loggedin) { %>
-                                <a href="/signin">Sign in to register</a>
-                                <% } %>
+                    <% if (loggedin && !registered) { %><button
+                            id="register__btn">Register</button>
+                    <% } %>
+                    <% if (!loggedin) { %>
+                    <a href="/signin">Sign in to register</a>
+                    <% } %>
 
-                                    <% if (registered) { %>
-                                        <button id="unregister__btn">Unregister</button>
-                                        <% } %>
+                    <% if (registered) { %>
+                    <button id="unregister__btn">Unregister</button>
+                    <% } %>
                 </div>
 
             </div>
@@ -71,14 +75,16 @@
     <% include ../partials/footer %>
 
 
-        <script id="data_course" type="application/json">
+    <script id="data_course"
+            type="application/json">
             {
                 "course_id": <%= course_id %>
 
 
             }
         </script>
-        <script id="data" type="application/json">
+    <script id="data"
+            type="application/json">
             {
 
 

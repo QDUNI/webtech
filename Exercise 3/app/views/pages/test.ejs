@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<Html>
+<Html lang="en">
 
 <head>
     <% include ../partials/head %>
@@ -13,13 +13,15 @@
     <article id="course__article">
         <div id="info__header">
             <%= course_title %>
-                <div>Department of
-                    <%= study_program %>
-                </div>
+            <div>Department of
+                <%= study_program %>
+            </div>
         </div>
         <div id="infoEntries__wrapper">
 
-            <img class="portrait" src="/images/teachers/<%= src %>.jpg" alt="proffessor">
+            <img class="portrait"
+                 src="/images/teachers/<%= src %>.jpg"
+                 alt="proffessor">
             <span>~<%= teacher %></span>
 
             <div class="infoEntry">

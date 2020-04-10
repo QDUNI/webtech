@@ -1,40 +1,62 @@
 <!DOCTYPE html>
-<Html>
-    <head>
-        <% include ../partials/head %>
-    </head>
+<Html lang="en">
 
-    <body id="RegisterPage">
-        <div class="RegisterForm__wrapper">
-            <div class="SigninForm__left">
-                <img class="logo" src="/images/logo/logo.svg" alt="logo" />
-                <h1 id="siginformlefth">COURSES</h1>
-            </div>
-            <div class="SigninForm__right">
-                <h1 id="siginformrighth">REGISTER</h1>
-                <form method="POST" action="/signin">
-                    <input type="text" class="name" name="firstname" placeholder="First Name">
-                    <input type="text" class="name" name="lastname" placeholder="Last Name">
-                    <input type="text" id="studentid" name="studentid" placeholder="StudentID">
-                    <input type="text" id="password" name="password" placeholder="Password">
-                    <select name = "dropdown" class = "dropdown">
-                        <option value = "Computer Science" selected>Computer Science</option>
-                        <option value = "Information Science">Information Science</option>
-                        <option value = "Mathematics">Mathematics</option>
-                     </select>
-                     <select name = "dropdown" class = "dropdown">
-                        <option value = "Bachelor" selected>Bachelor</option>
-                        <option value = "Master">Master</option>
-                     </select>
-                    <button class="submit__signin__btn">Register</button>
-                </form>
-    
-            </div>
-    
-    
-    
+<head>
+    <% include ../partials/head %>
+</head>
+
+<body id="RegisterPage">
+    <div class="RegisterForm__wrapper">
+        <div class="SigninForm__left">
+            <img class="logo"
+                 src="/images/logo/logo.svg"
+                 alt="logo" />
+            <h1 id="siginformlefth">COURSES</h1>
         </div>
-    
-    
-    </body>
+        <div class="SigninForm__right">
+            <h1 id="siginformrighth">REGISTER</h1>
+            <form method="POST"
+                  action="/signin">
+                <input type="text"
+                       class="name"
+                       name="firstname"
+                       placeholder="First Name">
+                <input type="text"
+                       class="name"
+                       name="lastname"
+                       placeholder="Last Name">
+                <input type="text"
+                       id="studentid"
+                       name="studentid"
+                       placeholder="StudentID">
+                <input type="text"
+                       id="password"
+                       name="password"
+                       placeholder="Password">
+                <select name="dropdown"
+                        class="dropdown">
+                    <option value="Computer Science"
+                            selected>Computer Science</option>
+                    <option value="Information Science">Information Science
+                    </option>
+                    <option value="Mathematics">Mathematics</option>
+                </select>
+                <select name="dropdown"
+                        class="dropdown">
+                    <option value="Bachelor"
+                            selected>Bachelor</option>
+                    <option value="Master">Master</option>
+                </select>
+                <button class="submit__signin__btn">Register</button>
+            </form>
+
+        </div>
+
+
+
+    </div>
+
+
+</body>
+
 </Html>
