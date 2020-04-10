@@ -1346,6 +1346,10 @@ input {
     text-align: center;
 }
 
+.course__item:hover {
+    cursor: pointer;
+}
+
 .course__item > div {
     width: 33%;
 }

@@ -25,6 +25,9 @@ document.addEventListener("DOMContentLoaded", () => {
             courseItem.appendChild(courseTeacher);
             courseItem.appendChild(courseTitle);
             courseItem.appendChild(courseSemester);
+            courseItem.onclick = () => {
+                window.location.href = "/course/" + courses[i].course_id;
+            };
             registeredcoursesContent.appendChild(courseItem);
         });
     }
