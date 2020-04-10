@@ -243,14 +243,14 @@ router.post("/signin", function(req, res) {
 
                 } else {
                     console.log("incorrect");
-                    res.redirect('group18/signin?status=error');
+                    res.redirect('signin?status=error');
                     res.end();
                 }
             }
         });
 
     } else {
-        res.redirect('/group18/signin?status=empty');
+        res.redirect('signin?status=empty');
         res.end();
     }
 
