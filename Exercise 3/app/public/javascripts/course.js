@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const dataElement = document.getElementById("data_course");
     const data = JSON.parse(dataElement.textContent);
 
+    // Clicking on register button makes an AJAX request to register to a course
     const registerButton = document.getElementById("register__btn");
     if (registerButton != null)
     {
@@ -26,6 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
         };
     }
 
+    // Clicking on unregister button makes an AJAX reguest to unregister on a course.
     const unregisterButton = document.getElementById("unregister__btn");
     unregisterButton.onclick = () => {
         if (confirm("Are you sure to unregister for this course?"))

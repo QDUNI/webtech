@@ -1,3 +1,5 @@
+// Set the dropdownlists to the current values for the student.
+
 document.addEventListener("DOMContentLoaded", () => {
     const acd_level = document.getElementById("acd_level__data").innerHTML;
     const program = document.getElementById("program__data").innerHTML;

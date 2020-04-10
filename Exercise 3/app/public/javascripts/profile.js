@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     let courses = [];
 
+    // List all registered courses
     for (let i = 0; i < registeredcourseData.length; i++)
     {
         loadUrl("/getcoursedata/" + registeredcourseData[i].course_id, (xhttp) => {
@@ -31,9 +32,6 @@ document.addEventListener("DOMContentLoaded", () => {
             registeredcoursesContent.appendChild(courseItem);
         });
     }
-
-    //HIER ZITTEN DE REGISTERED COURSES IN!
-    console.log(courses);
 
     function loadUrl(url, cFunction) {
         var xhttp = new XMLHttpRequest();

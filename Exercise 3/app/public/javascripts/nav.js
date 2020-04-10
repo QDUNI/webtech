@@ -3,9 +3,11 @@ document.addEventListener("DOMContentLoaded", () => {
     const navmobLinks = document.getElementsByClassName("navmob__links");
 
     menuButton.onclick = () => {
-        if (navmobLinks[0].classList.contains("hidden")) {
+        if (navmobLinks[0].classList.contains("hidden"))
+        {
             navmobLinks[0].classList.remove("hidden");
-        } else {
+        } else
+        {
             navmobLinks[0].classList.add("hidden");
         }
     };
@@ -13,7 +15,9 @@ document.addEventListener("DOMContentLoaded", () => {
     const dataElement = document.getElementById("data");
     const data = JSON.parse(dataElement.textContent);
 
-    if (data.loggedin) {
+    // If logged in there is a profile button instead of the sign in button
+    if (data.loggedin)
+    {
         const signinButton = document.getElementById("signin_btn");
         const signinButtonMob = document.getElementById("signin_btn--mob");
         const profileButton = document.createElement("div");

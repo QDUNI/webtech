@@ -10,6 +10,7 @@ document.addEventListener("DOMContentLoaded", () => {
         updateData();
     };
 
+    // Toggle a filter
     const filterToggle = function (element) {
         if (element.classList.contains("filter--toggled"))
         {
@@ -22,12 +23,14 @@ document.addEventListener("DOMContentLoaded", () => {
         updateFilters();
     };
 
+    // Set all onclick functions
     for (var key in filters)
     {
         const element = filters[key];
         filters[key].onclick = () => { filterToggle(element); };
     }
 
+    // Check what filters are selected and update data
     function updateFilters() {
         var numSelectedFilters = 0;
 
@@ -157,7 +160,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 coursePanelDiv.appendChild(coursePanelDescription);
                 coursePanel.appendChild(coursePanelDiv);
 
-
+                // Show 10 courses hide the rest. 
                 if (countTenCourses >= 10)
                 {
                     if (countTenCourses % 10 == 0)
