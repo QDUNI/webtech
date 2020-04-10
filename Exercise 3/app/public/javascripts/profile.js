@@ -8,7 +8,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // List all registered courses
     for (let i = 0; i < registeredcourseData.length; i++)
     {
-        loadUrl("/getcoursedata/" + registeredcourseData[i].course_id, (xhttp) => {
+        loadUrl("/group18/getcoursedata/" + registeredcourseData[i].course_id, (xhttp) => {
             const data = xhttp.response;
             courses.push(JSON.parse(data));
 
