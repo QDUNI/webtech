@@ -5,7 +5,7 @@
 
 <head>
     <% include ../partials/head %>
-    <script src="/javascripts/profile.js"></script>
+    <script src="/group18/javascripts/profile.js"></script>
 </head>
 
 <body>
@@ -16,7 +16,7 @@
         <div class="Profile__wrap">
             <div class="Profile__content">
                 <img class="Profile__picture"
-                     src="/images/user.png">
+                     src="/group18/images/user.png">
                 <span id="name"> <%= firstname %> <%= lastname %> </span>
                 <span id="studentnr"> <%= student_nr %> </span>
                 <span id="programlevel"> <% if(acd_level == "level1") { %>
@@ -42,7 +42,7 @@
             </div>
 
             <div id="signout__btn">
-                <a href="/signout">SIGNOUT</a>
+                <a href="/group18/signout">SIGNOUT</a>
             </div>
 
             <span id="course__data"

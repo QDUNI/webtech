@@ -4,7 +4,7 @@
 
 <head>
     <% include ../partials/head %>
-    <script src="/javascripts/editprofile.js"></script>
+    <script src="/group18/group18/javascripts/editprofile.js"></script>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
         <div class="Profile__wrap">
             <div class="Profile__content">
                 <img class="Profile__picture"
-                     src="/images/user.png"
+                     src="/group18/group18/images/user.png"
                      alt="user picture">
                 <span id="name"> <%= firstname %> <%= lastname %> </span>
                 <span id="studentnr"> <%= student_nr %> </span>
@@ -29,7 +29,7 @@
             <span id="edit__error"
                   class="edit__error"></span>
             <form method="POST"
-                  action="/editprofile"
+                  action="/group18/group18/editprofile"
                   onsubmit="return validateEdit()">
                 <div class="edit_input "> <span>Firstname</span> <input
                            type="text"
@@ -82,7 +82,7 @@
         <% include ../partials/footer %>
 
 </body>
-<script src="/javascripts/validateeditprofile.js"></script>
+<script src="/group18/group18/javascripts/validateeditprofile.js"></script>
 
 <script id="data"
         type="application/json">
