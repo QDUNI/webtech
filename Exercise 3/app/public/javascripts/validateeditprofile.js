@@ -2,7 +2,6 @@ function validateEdit() {
     var firstname = document.getElementsByName("firstname")[0].value;
     var lastname = document.getElementsByName("lastname")[0].value;
     var password = document.getElementsByName("password")[0].value;
-    var repassword = document.getElementsByName("repassword")[0].value;
     var program = document.getElementsByName("program")[0].value;
     var level = document.getElementsByName("level")[0].value;
     var span = document.getElementById("edit__error");
