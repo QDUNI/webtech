@@ -1449,6 +1449,7 @@ input {
     bottom: 2vw;
     right: 2vw;
     z-index: 1000;
+    opacity: 0;
 }
 
 #backtotop__button>a>img {
