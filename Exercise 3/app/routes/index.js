@@ -243,7 +243,7 @@ router.post("/signin", function(req, res) {
 
                 } else {
                     console.log("incorrect");
-                    res.redirect('/signin?status=error');
+                    res.redirect('group18/signin?status=error');
                     res.end();
                 }
             }
