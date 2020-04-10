@@ -12,6 +12,10 @@ document.addEventListener("DOMContentLoaded", () => {
                 {
                     if (xhttp.response == "Succesfully registered!")
                         window.location.reload();
+                    else
+                    {
+                        alert(xhttp.response);
+                    }
                 }
             };
             xhttp.open("GET", "/registercourse/" + data.course_id);
