@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", () => {
     const registeredcourseDataRaw = document.getElementById("course__data").innerHTML.trim();
     const registeredcourseData = JSON.parse(registeredcourseDataRaw);
+    const registeredcoursesContent = document.getElementsByClassName("RegisteredCourses__list")[0];
 
     let courses = [];
 
@@ -9,6 +10,22 @@ document.addEventListener("DOMContentLoaded", () => {
         loadUrl("/getcoursedata/" + registeredcourseData[i].course_id, (xhttp) => {
             const data = xhttp.response;
             courses.push(JSON.parse(data));
+
+            const courseItem = document.createElement("div");
+            if (i % 2 == 0)
+                courseItem.setAttribute("class", "course__item course__item--dark");
+            else
+                courseItem.setAttribute("class", "course__item course__item--light");
+            const courseTeacher = document.createElement("div");
+            courseTeacher.innerHTML = courses[i].teacher;
+            const courseTitle = document.createElement("div");
+            courseTitle.innerHTML = courses[i].course_title;
+            const courseSemester = document.createElement("div");
+            courseSemester.innerHTML = "semester " + courses[i].semester;
+            courseItem.appendChild(courseTeacher);
+            courseItem.appendChild(courseTitle);
+            courseItem.appendChild(courseSemester);
+            registeredcoursesContent.appendChild(courseItem);
         });
     }
 

@@ -1338,3 +1338,23 @@ input {
     height: auto;
     filter: grayscale();
 }
+
+.course__item {
+   
+    padding: 5px;
+    display: flex;
+    text-align: center;
+}
+
+.course__item > div {
+    width: 33%;
+}
+
+.course__item--dark {
+    background-color: #272727;
+    color: white;
+}
+.course__item--light {
+    background-color: #969696;
+    color: black;
+}

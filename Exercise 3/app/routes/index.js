@@ -274,15 +274,24 @@ router.get("/registercourse/:course_id", function (req, res, next) {
                 {
                     case "level1":
                         if (req.session.ac_level != "level1")
+                        {
                             res.send("You don't have the same academic level!");
+                            return;
+                        }
                         break;
                     case "level2":
                         if (req.session.ac_level != "level1")
+                        {
                             res.send("You don't have the same academic level!");
+                            return;
+                        }
                         break;
                     case "level3":
                         if (req.session.ac_level != "level3")
+                        {
                             res.send("You don't have the same academic level!");
+                            return;
+                        }
                         break;
                     default: break;
                 }
