@@ -93,7 +93,7 @@ document.addEventListener("DOMContentLoaded", () => {
         }
 
         // AJAX request
-        loadUrl("/searchdata?value=" + searchInput.value, (xhttp) => {
+        loadUrl("/group18/searchdata?value=" + searchInput.value, (xhttp) => {
             const data = xhttp.response;
 
 
@@ -128,7 +128,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 const coursePanel = document.createElement("div");
                 coursePanel.setAttribute("class", "course__panel");
                 coursePanel.onclick = () => {
-                    window.location.href = "/course?course_id=" + course.course_id;
+                    window.location.href = "/group18/course?course_id=" + course.course_id;
                 };
 
                 const coursePanelImg = document.createElement("img");

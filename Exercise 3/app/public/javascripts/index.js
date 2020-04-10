@@ -5,7 +5,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Redirect to search page
     searchButton.onclick = () => {
-        window.location.href = "/search?value=" + searchInput.value;
+        window.location.href = "/group18/search?value=" + searchInput.value;
     };
 
     // Change opacity based on scroll

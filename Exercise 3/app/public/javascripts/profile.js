@@ -47,6 +47,6 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const editProfileButton = document.getElementById("editprofile");
     editProfileButton.onclick = () => {
-        window.location.href = "/editprofile";
+        window.location.href = "/group18/editprofile";
     };
 });

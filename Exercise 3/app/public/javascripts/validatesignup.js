@@ -9,24 +9,32 @@ function validateForm() {
     var span = document.getElementById("Register_error");
 
     //check firstname
-    if (firstname == "") {
-        while (span.firstChild) {
+    if (firstname == "")
+    {
+        while (span.firstChild)
+        {
             span.removeChild(span.firstChild);
         }
         var text = document.createTextNode("Firstname cannot be empty");
         span.appendChild(text);
         return false;
-    } else {
-        if (/\d/.test(firstname)) {
-            while (span.firstChild) {
+    } else
+    {
+        if (/\d/.test(firstname))
+        {
+            while (span.firstChild)
+            {
                 span.removeChild(span.firstChild);
             }
             var text = document.createTextNode("Firstname cannot have a number");
             span.appendChild(text);
             return false;
-        } else {
-            if (/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(firstname)) {
-                while (span.firstChild) {
+        } else
+        {
+            if (/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(firstname))
+            {
+                while (span.firstChild)
+                {
                     span.removeChild(span.firstChild);
                 }
                 var text = document.createTextNode("Firstname cannot have a symbol");
@@ -37,24 +45,32 @@ function validateForm() {
     }
 
     //check lastname
-    if (lastname == "") {
-        while (span.firstChild) {
+    if (lastname == "")
+    {
+        while (span.firstChild)
+        {
             span.removeChild(span.firstChild);
         }
         var text = document.createTextNode("Lastname cannot be empty");
         span.appendChild(text);
         return false;
-    } else {
-        if (/\d/.test(lastname)) {
-            while (span.firstChild) {
+    } else
+    {
+        if (/\d/.test(lastname))
+        {
+            while (span.firstChild)
+            {
                 span.removeChild(span.firstChild);
             }
             var text = document.createTextNode("Lastname cannot have a number");
             span.appendChild(text);
             return false;
-        } else {
-            if (/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(lastname)) {
-                while (span.firstChild) {
+        } else
+        {
+            if (/[-!$%^&*()_+|~=`{}\[\]:";'<>?,.\/]/.test(lastname))
+            {
+                while (span.firstChild)
+                {
                     span.removeChild(span.firstChild);
                 }
                 var text = document.createTextNode("Lastname cannot have a symbol");
@@ -64,24 +80,32 @@ function validateForm() {
         }
     }
 
-    if (studentid == "") {
-        while (span.firstChild) {
+    if (studentid == "")
+    {
+        while (span.firstChild)
+        {
             span.removeChild(span.firstChild);
         }
         var text = document.createTextNode("StudentID cannot be empty");
         span.appendChild(text);
         return false;
-    } else {
-        if (studentid.length != 7) {
-            while (span.firstChild) {
+    } else
+    {
+        if (studentid.length != 7)
+        {
+            while (span.firstChild)
+            {
                 span.removeChild(span.firstChild);
             }
             var text = document.createTextNode("StudentID must be 7 numbers long");
             span.appendChild(text);
             return false;
-        } else {
-            if (/^\d+$/.test(studentid) == false) {
-                while (span.firstChild) {
+        } else
+        {
+            if (/^\d+$/.test(studentid) == false)
+            {
+                while (span.firstChild)
+                {
                     span.removeChild(span.firstChild);
                 }
                 var text = document.createTextNode("StudentID must numbers only");
@@ -93,18 +117,23 @@ function validateForm() {
     }
 
     // check password
-    if (password == "") {
-        while (span.firstChild) {
+    if (password == "")
+    {
+        while (span.firstChild)
+        {
             span.removeChild(span.firstChild);
         }
         var text = document.createTextNode("Password cannot be empty");
         span.appendChild(text);
         return false;
     }
-    if (password == repassword) {
+    if (password == repassword)
+    {
 
-        if (passwordReq(password) == false) {
-            while (span.firstChild) {
+        if (passwordReq(password) == false)
+        {
+            while (span.firstChild)
+            {
                 span.removeChild(span.firstChild);
             }
             var text = document.createTextNode("Password must be 8 chars long, has one capital letter, one small letter and 1 number ");
@@ -112,8 +141,10 @@ function validateForm() {
             return false;
         }
 
-    } else {
-        while (span.firstChild) {
+    } else
+    {
+        while (span.firstChild)
+        {
             span.removeChild(span.firstChild);
         }
         var text = document.createTextNode("Passwords don't match");
@@ -121,8 +152,10 @@ function validateForm() {
         return false;
     }
 
-    if (program == "") {
-        while (span.firstChild) {
+    if (program == "")
+    {
+        while (span.firstChild)
+        {
             span.removeChild(span.firstChild);
         }
         var text = document.createTextNode("Program needs to be defined");
@@ -130,8 +163,10 @@ function validateForm() {
         return false;
     }
 
-    if (level == "") {
-        while (span.firstChild) {
+    if (level == "")
+    {
+        while (span.firstChild)
+        {
             span.removeChild(span.firstChild);
         }
         var text = document.createTextNode("Level needs to be defined");
@@ -147,11 +182,15 @@ function validateForm() {
 //function that checks password. Returns true if atleast 8 chars long, has one capital letter, one small letter and 1 number else returns false.
 function passwordReq(input) {
     // password needs to be 8 char long, have a capital Letter, small letter and at least 1 number
-    if (input.length >= 8) {
+    if (input.length >= 8)
+    {
         console.log("password is 8 long");
-        if (/[a-z]/.test(input)) {
-            if (/[A-Z]/.test(input)) {
-                if (/\d/.test(input)) {
+        if (/[a-z]/.test(input))
+        {
+            if (/[A-Z]/.test(input))
+            {
+                if (/\d/.test(input))
+                {
                     return true;
                 }
             }

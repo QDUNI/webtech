@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         }
                     }
                 };
-                xhttp.open("GET", "/registercourse/" + data.course_id);
+                xhttp.open("GET", "/group18/registercourse/" + data.course_id);
                 xhttp.send();
             }
         };
@@ -41,7 +41,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         window.location.reload();
                 }
             };
-            xhttp.open("GET", "/unregistercourse/" + data.course_id);
+            xhttp.open("GET", "/group18/unregistercourse/" + data.course_id);
             xhttp.send();
         }
     };

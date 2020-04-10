@@ -24,7 +24,7 @@ document.addEventListener("DOMContentLoaded", () => {
         profileButton.setAttribute("id", "profile__btn");
         const profileButtonImg = document.createElement("img");
         profileButtonImg.onclick = () => {
-            window.location.href = "/profile";
+            window.location.href = "/group18/profile";
         };
         profileButtonImg.setAttribute("id", "profile__img");
         profileButtonImg.setAttribute("src", "/images/user.svg");
