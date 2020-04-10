@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
             window.location.href = "/group18/profile";
         };
         profileButtonImg.setAttribute("id", "profile__img");
-        profileButtonImg.setAttribute("src", "/images/user.svg");
+        profileButtonImg.setAttribute("src", "/group18/images/user.svg");
         profileButton.appendChild(profileButtonImg);
         document.getElementsByClassName("nav__wrapper")[0].appendChild(profileButton);
         signinButton.replaceWith(document.createElement("li"));

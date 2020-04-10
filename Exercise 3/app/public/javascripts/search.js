@@ -146,7 +146,7 @@ document.addEventListener("DOMContentLoaded", () => {
                         break;
                     default: break;
                 }
-                coursePanelImg.setAttribute("src", "/images/" + src);
+                coursePanelImg.setAttribute("src", "/group18/images/" + src);
                 const coursePanelDiv = document.createElement("div");
                 coursePanel.appendChild(coursePanelImg);
                 const coursePanelTitle = document.createElement("h2");
