@@ -269,13 +269,13 @@ router.post("/signin", function (req, res) {
                     req.session.userid = response.student_nr;
                     req.session.ac_level = response.acd_level;
                     req.session.program = response.programm;
-                    res.redirect('');
+                    res.redirect("/group18/");
 
 
                 } else
                 {
                     console.log("incorrect");
-                    res.redirect('signin?status=error');
+                    res.redirect('/signin?status=error');
                     res.end();
                 }
             }
@@ -283,7 +283,7 @@ router.post("/signin", function (req, res) {
 
     } else
     {
-        res.redirect('signin?status=empty');
+        res.redirect('/group18/signin?status=empty');
         res.end();
     }
 
@@ -291,13 +291,13 @@ router.post("/signin", function (req, res) {
 
 // This signs the user out.
 router.get("/signout", function (req, res, next) {
-    if (!req.session.loggedin) { res.redirect(""); return; }
+    if (!req.session.loggedin) { res.redirect("/group18/"); return; }
 
     req.session.loggedin = false;
     req.session.userid = "";
     req.session.ac_level = "";
     req.session.program = "";
-    res.redirect('');
+    res.redirect("/group18/");
 });
 
 // Used to register the user
@@ -324,14 +324,14 @@ router.post("/signup", function (req, res) {
             req.session.userid = studentid;
             req.session.ac_level = level;
             req.session.program = program;
-            res.redirect('');
+            res.redirect("/group18/");
         }
     });
 });
 
 // Used to edit a profile
 router.post("/editprofile", function (req, res) {
-    if (!req.session.loggedin) { res.redirect(""); return; }
+    if (!req.session.loggedin) { res.redirect("/group18/"); return; }
     let { firstname, lastname, password, program, acd_level } = req.body;
     if (acd_level == "Master") acd_level = "level3";
     else acd_level = "level1";
