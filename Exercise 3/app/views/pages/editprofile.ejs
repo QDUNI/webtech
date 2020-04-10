@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <% include ../partials/head %>
+    <script src="/javascripts/editprofile.js"></script>
+</head>
+
+<body>
+    <div id="profilepage">
+        <nav class="nav__color--black">
+            <% include ../partials/navbar %>
+        </nav>
+        <div class="Profile__wrap">
+            <div class="Profile__content">
+                <img class="Profile__picture"
+                     src="/images/user.png">
+                <span id="name"> <%= firstname %> <%= lastname %> </span>
+                <span id="studentnr"> <%= student_nr %> </span>
+                <span id="programlevel"> <% if(acd_level == "level1") { %>
+                    Bachelor <% } else { %> Master <% } %> -
+                    <%= program %></span>
+            </div>
+        </div>
+
+        <div id="editdata__wrap">
+            <form method="POST"
+                  action="/editprofile">
+                firstname: <input type="text"
+                       class="name"
+                       name="firstname"
+                       value="<%= firstname  %>"
+                       required="required"
+                       pattern="[A-Za-z0-9]{1,20}">
+                lastname: <input type="text"
+                       class="name"
+                       name="lastname"
+                       value="<%= lastname  %>"
+                       required="required"
+                       pattern="[A-Za-z0-9]{1,20}">
+                password: <input type="password"
+                       id="password"
+                       name="password"
+                       placeholder="Password">
+                <select id="program__dropdown"
+                        name="program"
+                        class="dropdown">
+                    <option value="Computer Science"
+                            selected>Computer Science</option>
+                    <option value="Information Science">Information Science
+                    </option>
+                    <option value="Mathematics">Mathematics</option>
+                </select>
+                <select id="acd_level__dropdown"
+                        name="acd_level"
+                        class="dropdown">
+                    <option value="Bachelor"
+                            selected>Bachelor</option>
+                    <option value="Master">Master</option>
+                </select>
+                <button class="submit__signin__btn">Save</button>
+            </form>
+        </div>
+
+        <% include ../partials/footer %>
+        <span id="acd_level__data"><%= acd_level %></span>
+        <span id="program__data"><%= program %></span>
+</body>
+
+<script id="data"
+        type="application/json">
+    {
+
+        "loggedin": <%= loggedin %>
+    }
+</script>
+
+
+</script>
+
+</html>

@@ -17,7 +17,8 @@
                      src="/images/user.png">
                 <span id="name"> <%= firstname %> <%= lastname %> </span>
                 <span id="studentnr"> <%= student_nr %> </span>
-                <span id="programlevel"> <%= acd_level %> -
+                <span id="programlevel"> <% if(acd_level == "level1") { %>
+                    Bachelor <% } else { %> Master <% } %> -
                     <%= program %></span>
             </div>
         </div>
@@ -38,13 +39,16 @@
                 </div>
             </div>
 
-
+            <div id="signout__btn">
+                <a href="/signout">SIGNOUT</a>
+            </div>
 
             <span id="course__data"
                   style="display: none">
                 <%= courses %>
             </span>
         </div>
+
 
         <% include ../partials/footer %>
 </body>

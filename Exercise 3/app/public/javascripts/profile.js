@@ -46,4 +46,9 @@ document.addEventListener("DOMContentLoaded", () => {
         xhttp.open("GET", url);
         xhttp.send();
     }
+
+    const editProfileButton = document.getElementById("editprofile");
+    editProfileButton.onclick = () => {
+        window.location.href = "/editprofile";
+    };
 });

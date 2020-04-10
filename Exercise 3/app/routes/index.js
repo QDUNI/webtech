@@ -73,6 +73,43 @@ router.get('/profile', function (req, res, next) {
     });
 });
 
+router.get('/editprofile', function (req, res, next) {
+    const sql = "SELECT * FROM Students WHERE student_nr = ?";
+    db.get(sql, req.session.userid, (err, respons) => {
+        if (err)
+        {
+            return console.error(err.message);
+        } else
+        {
+            const sql2 = "SELECT * FROM RegisteredCourses WHERE student_nr = ?";
+            db.all(sql2, req.session.userid, (err2, rows) => {
+                if (err2)
+                {
+                    return console.error(err2.message);
+                } else
+                {
+                    if (req.session.loggedin)
+                    {
+                        res.render('pages/editprofile', {
+                            loggedin: req.session.loggedin,
+                            student_nr: respons.student_nr,
+                            firstname: respons.firstname,
+                            lastname: respons.lastname,
+                            program: respons.programm,
+                            acd_level: respons.acd_level,
+                            courses: JSON.stringify(rows)
+                        });
+                    } else
+                    {
+                        res.redirect("/signin");
+                    }
+                }
+            });
+        }
+    });
+});
+
+
 
 router.get("/search/:value?", function (req, res, next) {
     res.render("pages/search", { title: "Search courses", value: req.param("value"), loggedin: req.session.loggedin });
@@ -229,6 +266,16 @@ router.post("/signin", function (req, res) {
 
 });
 
+router.get("/signout", function (req, res, next) {
+    if (!req.session.loggedin) { res.redirect("/"); return; }
+
+    req.session.loggedin = false;
+    req.session.userid = "";
+    req.session.ac_level = "";
+    req.session.program = "";
+    res.redirect('/');
+});
+
 router.post("/signup", function (req, res) {
     const { firstname, lastname, studentid, password, program, level } = req.body;
     console.log(firstname, lastname, studentid, password, program, level);
@@ -251,7 +298,29 @@ router.post("/signup", function (req, res) {
             res.redirect('/');
         }
     });
+});
 
+router.post("/editprofile", function (req, res) {
+    if (!req.session.loggedin) { res.redirect("/"); return; }
+    const { firstname, lastname, password, program, acd_level } = req.body;
+    let sql = "";
+    if (password == "")
+    {
+        sql = "UPDATE Students SET firstname = ?, lastname = ?, programm = ?, acd_level = ? WHERE student_nr = ?";
+    } else
+    {
+        sql = "UPDATE Students SET firstname = ?, lastname = ?, password = ?, programm = ?, acd_level = ? WHERE student_nr = ?";
+    }
+
+    db.run(sql, [firstname, lastname, password, program, acd_level, req.session.userid], (err) => {
+        if (err)
+        {
+            return console.log(err.message);
+        } else
+        {
+            res.redirect('/profile');
+        }
+    });
 });
 
 router.get("/registercourse/:course_id", function (req, res, next) {
