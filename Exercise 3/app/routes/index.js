@@ -76,7 +76,7 @@ router.get('/profile', function(req, res, next) {
                             courses: JSON.stringify(rows)
                         });
                     } else {
-                        res.redirect("signin");
+                        res.redirect("/signin");
                     }
                 }
             });
@@ -108,7 +108,7 @@ router.get('/editprofile', function(req, res, next) {
                             courses: JSON.stringify(rows)
                         });
                     } else {
-                        res.redirect("signin");
+                        res.redirect("/signin");
                     }
                 }
             });
