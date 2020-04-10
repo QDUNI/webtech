@@ -116,7 +116,7 @@ router.get("/search/:value?", function (req, res, next) {
 });
 
 router.get("/searchdata/:value?", function (req, res, next) {
-    const sql = "SELECT * FROM Courses WHERE title LIKE ?";
+    const sql = "SELECT * FROM Courses WHERE title LIKE ? ORDER BY program ASC, ac_level ASC, semester ASC, title ASC ";
     db.all(sql, req.param("value") + "%", (err, rows) => {
         if (err)
         {
