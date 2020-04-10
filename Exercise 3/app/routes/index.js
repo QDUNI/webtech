@@ -252,10 +252,8 @@ router.post("/signin", function (req, res) {
                     console.log("incorrect");
                     res.redirect('/signin?status=error');
                     res.end();
-
                 }
             }
-
         });
 
     } else
