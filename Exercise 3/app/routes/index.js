@@ -277,8 +277,9 @@ router.get("/signout", function (req, res, next) {
 });
 
 router.post("/signup", function (req, res) {
-    const { firstname, lastname, studentid, password, program, level } = req.body;
-    console.log(firstname, lastname, studentid, password, program, level);
+    let { firstname, lastname, studentid, password, program, level } = req.body;
+    if (level == "Bachelor") level = "level1";
+    if (level == "Master") level = "level3";
     let sql = 'INSERT INTO Students (students_id, student_nr, firstname, lastname, programm, acd_level, password) VALUES(?,?,?,?,?,?,?)';
 
     db.get(sql, [null, studentid, firstname, lastname, program, level, md5(password)], (err, result) => {
@@ -295,6 +296,9 @@ router.post("/signup", function (req, res) {
         {
 
             req.session.loggedin = true;
+            req.session.userid = studentid;
+            req.session.ac_level = level;
+            req.session.program = program;
             res.redirect('/');
         }
     });
@@ -302,25 +306,40 @@ router.post("/signup", function (req, res) {
 
 router.post("/editprofile", function (req, res) {
     if (!req.session.loggedin) { res.redirect("/"); return; }
-    const { firstname, lastname, password, program, acd_level } = req.body;
+    let { firstname, lastname, password, program, acd_level } = req.body;
+    if (acd_level == "Master") acd_level = "level3"; else acd_level = "level1";
     let sql = "";
+    console.log(req.session.userid);
     if (password == "")
     {
         sql = "UPDATE Students SET firstname = ?, lastname = ?, programm = ?, acd_level = ? WHERE student_nr = ?";
+        db.run(sql, [firstname, lastname, program, acd_level, req.session.userid], (err) => {
+            if (err)
+            {
+                return console.log(err.message);
+            } else
+            {
+                req.session.ac_level = acd_level;
+                req.session.program = program;
+                res.redirect('/profile');
+            }
+        });
     } else
     {
         sql = "UPDATE Students SET firstname = ?, lastname = ?, password = ?, programm = ?, acd_level = ? WHERE student_nr = ?";
-    }
 
-    db.run(sql, [firstname, lastname, password, program, acd_level, req.session.userid], (err) => {
-        if (err)
-        {
-            return console.log(err.message);
-        } else
-        {
-            res.redirect('/profile');
-        }
-    });
+        db.run(sql, [firstname, lastname, password, program, acd_level, req.session.userid], (err) => {
+            if (err)
+            {
+                return console.log(err.message);
+            } else
+            {
+                req.session.ac_level = acd_level;
+                req.session.program = program;
+                res.redirect('/profile');
+            }
+        });
+    }
 });
 
 router.get("/registercourse/:course_id", function (req, res, next) {
