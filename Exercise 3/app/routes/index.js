@@ -338,7 +338,6 @@ router.post("/editprofile", function (req, res) {
     if (acd_level == "Master") acd_level = "level3";
     else acd_level = "level1";
     let sql = "";
-    console.log(req.session.userid);
     if (password == "")
     {
         sql = "UPDATE Students SET firstname = ?, lastname = ?, programm = ?, acd_level = ? WHERE student_nr = ?";
