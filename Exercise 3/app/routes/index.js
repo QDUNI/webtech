@@ -14,6 +14,22 @@ var sqlite3 = require('sqlite3').verbose();
 var db = new sqlite3.Database('./database.db');
 var session = require('express-session');
 
+const winston = require('winston');
+const logger = winston.createLogger({
+    transports: [
+        new (winston.transports.File)({ filename: 'log.log' })
+    ],
+    format: winston.format.combine(
+        winston.format.colorize(),
+        winston.format.json()
+    ),
+    levels: {
+        'info': 0,
+        'ok': 1,
+        'error': 2
+    }
+});
+
 //session setup 
 router.use(session({
     name: 'sid',
@@ -28,8 +44,8 @@ router.use(session({
 
 /* GET home page. */
 router.get('/', function (req, res, next) {
+    logger.info(req, 'home');
     res.render('pages/index', { title: 'Express', loggedin: req.session.loggedin });
-
 });
 
 router.get('/test', function (req, res, next) {
