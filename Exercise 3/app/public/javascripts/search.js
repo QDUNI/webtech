@@ -65,13 +65,11 @@ document.addEventListener("DOMContentLoaded", () => {
                 case "Information_Science":
                     program.push("Information Science");
                     break;
-                case "level_1":
+                case "bachelor":
                     academicLevels.push("level1");
-                    break;
-                case "level_2":
                     academicLevels.push("level2");
                     break;
-                case "level_3":
+                case "master":
                     academicLevels.push("level3");
                     break;
                 case "1":
