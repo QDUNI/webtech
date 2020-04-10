@@ -6,20 +6,23 @@ document.addEventListener("DOMContentLoaded", () => {
     if (registerButton != null)
     {
         registerButton.onclick = () => {
-            var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function () {
-                if (this.readyState == 4 && this.status == 200)
-                {
-                    if (xhttp.response == "Succesfully registered!")
-                        window.location.reload();
-                    else
+            if (confirm("Are you sure to register on this course?"))
+            {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function () {
+                    if (this.readyState == 4 && this.status == 200)
                     {
-                        alert(xhttp.response);
+                        if (xhttp.response == "Succesfully registered!")
+                            window.location.reload();
+                        else
+                        {
+                            alert(xhttp.response);
+                        }
                     }
-                }
-            };
-            xhttp.open("GET", "/registercourse/" + data.course_id);
-            xhttp.send();
+                };
+                xhttp.open("GET", "/registercourse/" + data.course_id);
+                xhttp.send();
+            }
         };
     }
 
