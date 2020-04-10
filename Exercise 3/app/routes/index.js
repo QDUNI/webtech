@@ -332,7 +332,9 @@ router.post("/signup", function (req, res) {
 // Used to edit a profile
 router.post("/editprofile", function (req, res) {
     if (!req.session.loggedin) { res.redirect("/group18/"); return; }
+
     let { firstname, lastname, password, program, acd_level } = req.body;
+    console.log("KIJK HIER: " + acd_level);
     if (acd_level == "Master") acd_level = "level3";
     else acd_level = "level1";
     let sql = "";
