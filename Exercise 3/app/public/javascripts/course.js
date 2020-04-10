@@ -3,12 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const data = JSON.parse(dataElement.textContent);
 
     const registerButton = document.getElementById("register__btn");
-    if (registerButton != null) {
+    if (registerButton != null)
+    {
         registerButton.onclick = () => {
             var xhttp = new XMLHttpRequest();
-            xhttp.onreadystatechange = function() {
-                if (this.readyState == 4 && this.status == 200) {
-                    console.log(xhttp.response);
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200)
+                {
                     if (xhttp.response == "Succesfully registered!")
                         window.location.reload();
                 }
@@ -20,16 +21,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const unregisterButton = document.getElementById("unregister__btn");
     unregisterButton.onclick = () => {
-        console.log("test");
-        var xhttp = new XMLHttpRequest();
-        xhttp.onreadystatechange = function() {
-            if (this.readyState == 4 && this.status == 200) {
-                console.log(xhttp.response);
-                if (xhttp.response == "Succesfully unregistered!")
-                    window.location.reload();
-            }
-        };
-        xhttp.open("GET", "/unregistercourse/" + data.course_id);
-        xhttp.send();
+        if (confirm("Are you sure to unregister for this course?"))
+        {
+            var xhttp = new XMLHttpRequest();
+            xhttp.onreadystatechange = function () {
+                if (this.readyState == 4 && this.status == 200)
+                {
+                    console.log(xhttp.response);
+                    if (xhttp.response == "Succesfully unregistered!")
+                        window.location.reload();
+                }
+            };
+            xhttp.open("GET", "/unregistercourse/" + data.course_id);
+            xhttp.send();
+        }
     };
 });
