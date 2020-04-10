@@ -1321,8 +1321,20 @@ input {
         right: 40px;
         top: 15px;
     }
-    #profile__btn>img {}
     .Profile__picture {
         width: 30%;
     }
+}
+
+#backtotop__button {
+    position: fixed;
+    bottom: 2vw;
+    right: 2vw;
+    z-index: 1000;
+}
+
+#backtotop__button > a > img {
+    width: 8vh;
+    height: auto;
+    filter: grayscale();
 }
